@@ -1,0 +1,103 @@
+:root {
+    /* Color */
+    --pr-color: #036;
+    /* --sc-color: */
+}
+
+/* Sidebar Style */
+.main-sidebar {
+    background-color: white;
+}
+
+.nav-sidebar {
+    height: 90vh;
+}
+
+.brand-link {
+    border: none !important;
+}
+
+.brand-text {
+    color: black;
+}
+
+.nav-header {
+    color: rgb(96, 95, 95) !important;
+    font-size: 16px !important;
+}
+
+.nav-link {
+    border-radius: 2rem !important;
+    color: rgb(96, 95, 95) !important;
+}
+
+.nav-link:hover {
+    background-color: red !important;
+    color: white !important;
+}
+
+.nav-icon {
+    padding-right: 1rem;
+}
+
+.user-auth {
+    padding-right: 0.5rem;
+}
+
+/* Navbar Style */
+
+/* Dashboard Style */
+.bg-image {
+    background-image: url("../img/bgdashboard.png");
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit: fill;
+    height: 600px;
+    width: 100%;
+}
+
+/* Data Style */
+
+.name-location {
+    font-size: 32px;
+}
+
+.form-select {
+    border: none;
+}
+
+.input-group-text {
+    border: none;
+    background-color: white;
+}
+
+.location-name {
+    padding: 0.5rem 4rem;
+    font-size: 24px;
+    background-color: green;
+    color: white;
+    border-radius: 2rem;
+}
+
+.ont-text {
+    font-size: 9px;
+}
+
+.column1 {
+    background-color: #f1c27d !important;
+}
+
+.table thead {
+    background-color: rgb(220, 220, 220);
+}
+
+table.table-bordered {
+    border: 1px solid rgb(0, 0, 0);
+    margin-top: 20px;
+}
+table.table-bordered > thead > tr > th {
+    border: 1px solid rgb(0, 0, 0);
+}
+table.table-bordered > tbody > tr > td {
+    border: 1px solid rgb(0, 0, 0);
+}

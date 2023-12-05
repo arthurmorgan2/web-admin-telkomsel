@@ -1,0 +1,67 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+.bg-image {
+    background-image: url("../img/bglogin.png");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.card-container {
+    padding-top: 320px;
+    height: 600px;
+}
+
+.card-icon {
+    border: solid 5px white;
+    border-radius: 10rem;
+    width: 120px;
+    height: 120px;
+}
+
+.icon {
+    font-size: 24px;
+}
+
+.input-group {
+    height: 50px;
+}
+
+.form-control {
+    border: none;
+    border-radius: 2rem;
+}
+
+.input-group-text {
+    border-radius: 2rem;
+    background-color: white;
+    border: none;
+}
+
+.btn-login {
+    color: white;
+    background-color: rgb(40, 40, 199);
+    border: none;
+    border-radius: 2rem;
+    width: 100%;
+}
+
+.btn-login:hover {
+    background-color: rgb(87, 87, 208);
+}
+
+.login-extras a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
