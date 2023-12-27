@@ -23,4 +23,8 @@ Route::controller(LoginController::class)->group(function () {
 })->middleware("guest");
 
 Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->name("dashboard")->middleware("auth");
-Route::get('/data-nte', [DataController::class, 'showData'])->name("data")->middleware("auth");
+//Data NTE Route
+Route::get('/data-nte', [DataController::class, 'showDataNTE'])->name("nte")->middleware("auth");
+//Data ALL TYPE ROUTE
+Route::get('/data-all', [DataController::class, 'showDataALL'])->name("all")->middleware("auth");
+// Route::get('/data-all', [DataController::class, 'headerToArray'])->name("sumall")->middleware("auth");

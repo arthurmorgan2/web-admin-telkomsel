@@ -22,15 +22,15 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row py-4">
                     <div class="col-md-12 px-3 filterable-div" data-category="ntebaru">
-                        @include('admin.table.table-1')
+                        @include('admin.table.table-nte-baru')
                     </div>
                     <div class="col-md-12 px-3 filterable-div" data-category="dismantling">
-                        @include('admin.table.table-2')
+                        @include('admin.table.table-dismantling')
                     </div>
                     <div class="col-md-12 px-3 filterable-div" data-category="refurbished">
-                        @include('admin.table.table-3')
+                        @include('admin.table.table-refurbished')
                     </div>
                 </div>
             </div>

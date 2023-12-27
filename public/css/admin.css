@@ -82,9 +82,32 @@
 .ont-text {
     font-size: 9px;
 }
-
+/* Colouring Cells */
+/* Tabel NTE Telkomsel */
 .column1 {
     background-color: #f1c27d !important;
+}
+/* Tabel ALL TYPE */
+.table-all thead {
+    /* font-size: 16px; */
+    background-color: white !important;
+    /* color: white; */
+}
+.table-all .cell-1 {
+    background-color: #44546a;
+    color: white;
+}
+.table-all .cell-2 {
+    background-color: grey;
+    color: white;
+}
+.table-all .cell-3 {
+    background-color: #b3c6e7;
+    color: black;
+}
+
+.table-parent {
+    overflow: auto;
 }
 
 .table thead {

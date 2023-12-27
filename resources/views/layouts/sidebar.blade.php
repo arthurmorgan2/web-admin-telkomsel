@@ -29,6 +29,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/data-all" class="nav-link">
+                            <i class="nav-icon fas fa-globe"></i>
+                            <p>
+                                All Type
+                            </p>
+                        </a>
+                    </li>
                 </div>
 
                 <div>
