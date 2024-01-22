@@ -6,7 +6,7 @@
 
                 <div class="row">
                     <div class="col-md-12 px-3">
-                        @include('admin.table.table-all-type')
+                        @include('admin.table.table-alert')
                     </div>
                 </div>
             </div>

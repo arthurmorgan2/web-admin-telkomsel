@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\DummyController;
+use App\Http\Controllers\AlertController;
+use App\Http\Controllers\PsbController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +29,14 @@ Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->name("d
 //Data NTE Route
 Route::get('/data-nte', [DataController::class, 'showDataNTE'])->name("nte")->middleware("auth");
 //Data ALL TYPE ROUTE
-Route::get('/data-all', [DataController::class, 'showDataALL'])->name("all")->middleware("auth");
-// Route::get('/data-all', [DataController::class, 'headerToArray'])->name("sumall")->middleware("auth");
+Route::get('/data-all', [DataController::class, 'showDataALL'])->name("showDataALL")->middleware("auth");
+//Data ALL TYPE ROUTE
+Route::get('/data-alert', [AlertController::class, 'showDataAlert'])->name("showDataAlert")->middleware("auth");
+Route::get('/data-alert', [AlertController::class, 'fetchAlert'])->name("fetchAlert")->middleware("auth");
+//Data PSB ROUTE
+Route::get('/data-psb', [PsbController::class, 'showDataPsb'])->name("showDataPsb")->middleware("auth");
+Route::get('/data-psb', [PsbController::class, 'fetchDataPsb'])->name("fetchDataPsb")->middleware("auth");
+
+
+
+

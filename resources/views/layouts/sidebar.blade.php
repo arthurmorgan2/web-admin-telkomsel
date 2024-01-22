@@ -9,8 +9,8 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column justify-content-between" data-widget="treeview"
-                role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column justify-content-between" data-widget="treeview" role="menu"
+                data-accordion="false">
                 <div>
                     <li class="nav-header fw-bold">Main Menu</li>
 
@@ -34,6 +34,22 @@
                             <i class="nav-icon fas fa-globe"></i>
                             <p>
                                 All Type
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/data-alert" class="nav-link">
+                            <i class="nav-icon fas fa-bell"></i>
+                            <p>
+                                Alert R5 TSEL
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/data-psb" class="nav-link">
+                            <i class="nav-icon fas fa-bell"></i>
+                            <p>
+                                PSB PASANG BARU
                             </p>
                         </a>
                     </li>

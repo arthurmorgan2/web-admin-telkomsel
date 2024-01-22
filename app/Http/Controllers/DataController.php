@@ -3,20 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use App\Models\NteBaru;
 use App\Models\Dismantling;
-use App\Http\Resources\NteBaruResource;
 use App\Models\Refurbished;
 use Revolution\Google\Sheets\Facades\Sheets;
+use Yajra\DataTables\DataTables;
 
 class DataController extends Controller
 {
+    // Data NTE
     public function showDataNTE()
     {
         // Dummy Data
         // $ntebaru = NteBaru::all();
-        $dismantling = Dismantling::all();
-        $refurbished = Refurbished::all();
+        // $dismantling = Dismantling::all();
+        // $refurbished = Refurbished::all();
         //Google Sheet API NTE BARU
         $ntebaru = Sheets::spreadsheet('1UC7ghJHsFIQOms8htwVO37NBD5AO6Uo19xZwV00Sr8A')->sheet('Copy of Report Laporan TSEL R5')->range("A5:AA20")->get();
         $headerBaru = $ntebaru->pull(0);
@@ -38,6 +40,7 @@ class DataController extends Controller
 
         return view('admin.data-nte', compact('dataRefurbished', 'dataBaru', 'dataDismantling'));
     }
+    // Data ALL
     public function showDataALL()
     {
         $all = Sheets::spreadsheet('1UC7ghJHsFIQOms8htwVO37NBD5AO6Uo19xZwV00Sr8A')->sheet('Copy of ALL TYPE')->range("A5:AO103")->get();
@@ -51,18 +54,6 @@ class DataController extends Controller
         $dataTOTAL = array_values($valuesTOTAL->toArray());
         // dd($dataALL);
         // dd($dataTOTAL);
-
         return view('admin.data-all', compact('dataALL', 'dataTOTAL'));
     }
-
-    // public function sumDataTotal()
-    // {
-    //     $sheets = Sheets::spreadsheet('1QD_lI7jeeJYnump2JXOT0WmJ_vZeD87GWQBDW783S2g')->sheet('ALL TYPE')->range("G104:AO105")->get();
-    //     // $sheets = Sheets::spreadsheet('1QD_lI7jeeJYnump2JXOT0WmJ_vZeD87GWQBDW783S2g')->sheet('Sheet1')->range("A1:C4")->get();
-    //     $header = $sheets->pull(0);
-    //     $values = Sheets::collection($header, $sheets);
-    //     $data = array_values($values->toArray());
-    //     dd($data);
-    //     return view('admin.data-all', compact('data'));
-    // }
 }
