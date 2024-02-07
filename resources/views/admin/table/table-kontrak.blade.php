@@ -15,36 +15,36 @@
 
             @foreach ($dataMainCol[0] as $item)
             <tr>
-                <td style="vertical-align : middle;text-align:center;" rowspan="3">{{ $item }}</td>
+                <td class="bg-danger" style="vertical-align : middle;text-align:center;" rowspan="3">{{ $item }}</td>
             </tr>
             @endforeach
             <tr>
-                <td>TEKNISI</td>
+                <td class="bg-danger">TEKNISI</td>
                 @foreach ($dataFirstHeader[0] as $item)
-                <td style="vertical-align : middle;text-align:center;" colspan="4">{{ $item }}</td>
+                <td class="bg-danger" style="vertical-align : middle;text-align:center;" colspan="4">{{ $item }}</td>
                 @endforeach
-                <td style="vertical-align : middle;text-align:center;" colspan="5">Sepeda Motor</td>
+                <td class="bg-danger" style="vertical-align : middle;text-align:center;" colspan="5">Sepeda Motor</td>
                 @foreach ($dataFirstHeader2[0] as $item)
-                <td style="vertical-align : middle;text-align:center;" colspan="4">{{ $item }}</td>
+                <td class="bg-danger" style="vertical-align : middle;text-align:center;" colspan="4">{{ $item }}</td>
                 @endforeach
             </tr>
             <tr>
-                <td></td>
+                <td class="bg-danger"></td>
                 @php
                 $timesToLoop = 7;
                 $timesToLoop2 = 82;
                 @endphp
-                @for ($i = 0; $i < $timesToLoop; $i++) @foreach ($dataSecondHeader[0] as $item) <td
+                @for ($i = 0; $i < $timesToLoop; $i++) @foreach ($dataSecondHeader[0] as $item) <td class="bg-danger"
                     style="vertical-align : middle;text-align:center;">{{ $item }}</td>
                     @endforeach
                     @endfor
-                    <td style="vertical-align : middle;text-align:center;">RASIO</td>
-                    <td style="vertical-align : middle;text-align:center;">KEBUTUHAN KONTRAK</td>
-                    <td style="vertical-align : middle;text-align:center;">PEMENUHAN</td>
-                    <td style="vertical-align : middle;text-align:center;">NATURA</td>
-                    <td style="vertical-align : middle;text-align:center;">GAP</td>
+                    <td class="bg-danger" style="vertical-align : middle;text-align:center;">RASIO</td>
+                    <td class="bg-danger" style="vertical-align : middle;text-align:center;">KEBUTUHAN KONTRAK</td>
+                    <td class="bg-danger" style="vertical-align : middle;text-align:center;">PEMENUHAN</td>
+                    <td class="bg-danger" style="vertical-align : middle;text-align:center;">NATURA</td>
+                    <td class="bg-danger" style="vertical-align : middle;text-align:center;">GAP</td>
                     @for ($i = 0; $i < $timesToLoop2; $i++) @foreach ($dataSecondHeader[0] as $item) <td
-                        style="vertical-align : middle;text-align:center;">{{ $item }}</td>
+                        class="bg-danger" style="vertical-align : middle;text-align:center;">{{ $item }}</td>
                         @endforeach
                         @endfor
             </tr>
