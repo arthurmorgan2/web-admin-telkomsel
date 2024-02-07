@@ -10,7 +10,7 @@
 
     <hr>
 
-    <table class="table table-dark" id="dataTable">
+    <table class="table" id="dataTable">
         <thead class="text-center">
 
             @foreach ($dataMainCol[0] as $item)

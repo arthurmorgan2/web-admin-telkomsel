@@ -110,6 +110,10 @@
     color: black;
 }
 
+.table {
+    border-top: 2px solid black !important;
+}
+
 .table-parent {
     overflow: auto;
     font-size: 12px;
