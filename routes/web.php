@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\DummyController;
 use App\Http\Controllers\AlertController;
+use App\Http\Controllers\KontrakController;
 use App\Http\Controllers\PsbController;
 
 /*
@@ -36,6 +37,10 @@ Route::get('/data-alert', [AlertController::class, 'fetchAlert'])->name("fetchAl
 //Data PSB ROUTE
 Route::get('/data-psb', [PsbController::class, 'showDataPsb'])->name("showDataPsb")->middleware("auth");
 Route::get('/data-psb', [PsbController::class, 'fetchDataPsb'])->name("fetchDataPsb")->middleware("auth");
+//Data KONTRAK ROUTE
+Route::get('/data-kontrak', [KontrakController::class, 'showDataKontrak'])->name("showDataKontrak")->middleware("auth");
+Route::get('/data-kontrak', [KontrakController::class, 'fetchKontrak'])->name("fetchKontrak")->middleware("auth");
+
 
 
 

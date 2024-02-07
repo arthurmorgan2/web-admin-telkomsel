@@ -2,7 +2,10 @@
     <label class="location-name" for="location">Data ALL TYPE</label>
 </div>
 
-
+<div>
+    <label for="search">Search:</label>
+    <input type="text" id="search" oninput="filterTable()">
+</div>
 
 <div class="container-fluid table-parent">
     <table class="table table-all table-bordered" id="dataTable">

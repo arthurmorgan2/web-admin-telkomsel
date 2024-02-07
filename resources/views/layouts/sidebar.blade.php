@@ -37,7 +37,7 @@
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="/data-alert" class="nav-link">
                             <i class="nav-icon fas fa-bell"></i>
                             <p>
@@ -47,9 +47,17 @@
                     </li>
                     <li class="nav-item">
                         <a href="/data-psb" class="nav-link">
-                            <i class="nav-icon fas fa-bell"></i>
+                            <i class="nav-icon fas fa-square-plus"></i>
                             <p>
                                 PSB PASANG BARU
+                            </p>
+                        </a>
+                    </li> --}}
+                    <li class="nav-item">
+                        <a href="/data-kontrak" class="nav-link">
+                            <i class="nav-icon fas fa-address-book"></i>
+                            <p>
+                                Kontrak Alker Salker
                             </p>
                         </a>
                     </li>
