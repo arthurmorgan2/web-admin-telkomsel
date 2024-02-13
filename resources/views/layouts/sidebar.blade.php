@@ -64,6 +64,14 @@
                 </div>
 
                 <div>
+                    <li class="nav-item">
+                        <a href="/kelola-admin" class="nav-link">
+                            <i class="nav-icon fas fa-user-tie"></i>
+                            <p>
+                                Kelola Admin
+                            </p>
+                        </a>
+                    </li>
                     <li class="nav-item logout">
                         <a href="/logout" class="nav-link">
                             <i class="nav-icon fas bi-box-arrow-right"></i>

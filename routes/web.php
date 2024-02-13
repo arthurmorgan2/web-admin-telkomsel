@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
@@ -41,6 +42,11 @@ Route::get('/data-psb', [PsbController::class, 'fetchDataPsb'])->name("fetchData
 Route::get('/data-kontrak', [KontrakController::class, 'showDataKontrak'])->name("showDataKontrak")->middleware("auth");
 Route::get('/data-kontrak', [KontrakController::class, 'fetchKontrak'])->name("fetchKontrak")->middleware("auth");
 
+//Data KONTRAK ROUTE
+Route::get('/kelola-admin', [AdminController::class, 'showDataAdmin'])->name("showDataAdmin")->middleware("auth");
+Route::post('/kelola-admin/store', [AdminController::class, 'store'])->name("store")->middleware("auth");
+Route::put('/kelola-admin/update/{id}', [AdminController::class, 'update'])->name("update")->middleware("auth");
+Route::delete('/kelola-admin/delete/{id}', [AdminController::class, 'delete'])->name("delete")->middleware("auth");
 
 
 

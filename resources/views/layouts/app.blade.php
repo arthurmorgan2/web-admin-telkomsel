@@ -3,3 +3,4 @@
 @include('layouts.sidebar')
 @yield('content')
 @include('layouts.footer')
+@include('sweetalert::alert')
