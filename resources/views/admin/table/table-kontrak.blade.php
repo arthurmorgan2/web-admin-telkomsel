@@ -10,41 +10,216 @@
 
     <hr>
 
-    <table class="table" id="dataTable">
+    <table class="table table-all" id="dataTable">
         <thead class="text-center">
 
             @foreach ($dataMainCol[0] as $item)
             <tr>
-                <td class="bg-danger" style="vertical-align : middle;text-align:center;" rowspan="3">{{ $item }}</td>
+                <td class="cell-2" style="vertical-align : middle;text-align:center;" rowspan="3">{{ $item }}</td>
             </tr>
             @endforeach
             <tr>
-                <td class="bg-danger">TEKNISI</td>
-                @foreach ($dataFirstHeader[0] as $item)
-                <td class="bg-danger" style="vertical-align : middle;text-align:center;" colspan="4">{{ $item }}</td>
-                @endforeach
-                <td class="bg-danger" style="vertical-align : middle;text-align:center;" colspan="5">Sepeda Motor</td>
-                @foreach ($dataFirstHeader2[0] as $item)
-                <td class="bg-danger" style="vertical-align : middle;text-align:center;" colspan="4">{{ $item }}</td>
-                @endforeach
+                <td class="bg-info">TEKNISI</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">Splicer</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">OTDR</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">OTDR MINI</td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">KBM SKYWORKER</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">KBM PICK UP</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">KBM STATION</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="5">Sepeda Motor</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">OPTICAL FIBER
+                    CLEANER PEN</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">OPTICAL FIBER
+                    STRIPPER</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">LAN TESTER</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">OPTICAL POWER
+                    METER
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">OPTICAL LIGHT
+                    SOURCE
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">VISUAL FAULT
+                    LOCATOR
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">TANGGA TELESCOPIK
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">TOOLKIT
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">USB
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">CABLE CONSOLE
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">HANDPHONE
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">TAS RANSEL
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">JAS HUJAN (MANTEL)
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">MICRO PHONE TEST
+                    [STANDARD]
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">INSERTION TOOLS
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">TONE CHECKER
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">LAPTOP
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">CPU
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">CRIMPING TOOL
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">ALAT
+                    PEMBERSIH(SAPU, VACUM, DLL)
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">THERMO HYGROMETER
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">TANG AMPERE</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">GENSET</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">CANGKUL</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">TANGGA SLIDING
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">BOR LISTRIK</td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">HEADLAMP
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">POWER BANK ONT
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">BATTERY CAPACITY
+                    TESTER
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">PC
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">SAFETY HARNESS
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">HELM
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">CABLE FAULT
+                    LOCATOR
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">GERGAJI BESI
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">JAS HUJAN
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">OPTICAL FIBER
+                    IDENTIFIER (OFI)
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">SARUNG TANGAN
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">TOOLKIT SET
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">WORKING PLATFORM
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">ALAT UKUR KETEBALAN
+                    TIANG
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">KBM FORKLIFT
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">TANG POTONG
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">TUBE CUTTER
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">SAFETY SHOES
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">WALKING METER
+                    (MEASURE)
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">PRINTER
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">POMPA AIR
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">TELEPON TEST
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">TAS TOOLKIT
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">OPTICAL FIBER CLEANER
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">OPTICAL FIBER CLEAVER
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">AVOMETER
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">BAJU ANTI PANAS
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">OBENG
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">SENTER ANTI EXPLOSION
+                </td>
+                <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">GROUNDING TESTER
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">VACUUM CLEANER
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">TRACK TANG
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">BACK PACK INDIHOME
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">WORKING BELT
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">TANGGA LIPAT
+                    ALUMINIUM
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">SAFETY BELT
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">TANG BUAYA
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">TESPEN
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">BARCODE READER /
+                    SCANNER
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">GPS
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">TROLI DORONG
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">TAKEL
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">BAND IT
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">CABLE SHEATH CUTTER
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">ALAT UKUR BROADBAND
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">GPON
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">GERGAJI MESIN
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">BARE FIBER
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">LEASEHOLD
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">LINGGIS
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">SABIT
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">PRINTER STANDAR
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">SPECIAL TOOLS ARC
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">DROP WIRE STRIPPER
+                </td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center;" colspan="4">TENDA
+                </td>
             </tr>
             <tr>
-                <td class="bg-danger"></td>
+                <td class=""></td>
                 @php
-                $timesToLoop = 7;
-                $timesToLoop2 = 82;
+                $columns = [
+                ['class' => 'column1', 'text' => 'RASIO'],
+                ['class' => 'column1', 'text' => 'KEBUTUHAN KONTRAK'],
+                ['class' => 'bg-success', 'text' => 'PEMENUHAN'],
+                ['class' => 'bg-danger', 'text' => 'GAP']
+                ];
+                $timesToLoop = 6;
+                $timesToLoop2 = 81;
                 @endphp
-                @for ($i = 0; $i < $timesToLoop; $i++) @foreach ($dataSecondHeader[0] as $item) <td class="bg-danger"
-                    style="vertical-align : middle;text-align:center;">{{ $item }}</td>
+                @for ($i = 0; $i < $timesToLoop; $i++) @foreach ($columns as $item) <td class="{{ $item['class'] }}"
+                    style="vertical-align : middle;text-align:center;">{{ $item['text'] }}</td>
                     @endforeach
                     @endfor
-                    <td class="bg-danger" style="vertical-align : middle;text-align:center;">RASIO</td>
-                    <td class="bg-danger" style="vertical-align : middle;text-align:center;">KEBUTUHAN KONTRAK</td>
-                    <td class="bg-danger" style="vertical-align : middle;text-align:center;">PEMENUHAN</td>
-                    <td class="bg-danger" style="vertical-align : middle;text-align:center;">NATURA</td>
+                    <td class="column1" style="vertical-align : middle;text-align:center;">RASIO</td>
+                    <td class="column1" style="vertical-align : middle;text-align:center;">KEBUTUHAN KONTRAK</td>
+                    <td class="bg-success" style="vertical-align : middle;text-align:center;">PEMENUHAN</td>
+                    <td class="bg-success" style="vertical-align : middle;text-align:center;">NATURA</td>
                     <td class="bg-danger" style="vertical-align : middle;text-align:center;">GAP</td>
-                    @for ($i = 0; $i < $timesToLoop2; $i++) @foreach ($dataSecondHeader[0] as $item) <td
-                        class="bg-danger" style="vertical-align : middle;text-align:center;">{{ $item }}</td>
+                    @for ($i = 0; $i < $timesToLoop2; $i++) @foreach ($columns as $item) <td
+                        class="{{ $item['class'] }}" style="vertical-align : middle;text-align:center;">{{ $item['text']
+                        }}</td>
                         @endforeach
                         @endfor
             </tr>

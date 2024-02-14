@@ -50,7 +50,6 @@ class AdminController extends Controller
 
    public function update(Request $request, $id)
     {
-        // Define validation rules with custom error messages
        $rules = [
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:users,email,' . $id,

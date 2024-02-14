@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/login.css">
     {{-- FontAwesome CDN --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="{{ asset('vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('img/logo.png') }}">
     <title>Login Admin NTE Telkomsel</title>
 </head>
@@ -35,8 +36,8 @@
                         <div class="mb-1">
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa fa-solid fa-user fa-xl"></i></span>
-                                <input type="name" class="form-control" id="name" name="name"
-                                    placeholder="Username" required>
+                                <input type="name" class="form-control" id="name" name="name" placeholder="Username"
+                                    required>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -48,7 +49,7 @@
                         </div>
 
                         <button type="submit" class="btn-login py-2 fw-bold">Getting Started</button>
-                        <div class="row mt-2">
+                        {{-- <div class="row mt-2">
                             <div class="col login-extras d-flex justify-content-between align-items-center">
                                 <a href="#">
                                     Create an account?
@@ -57,14 +58,14 @@
                                     Need Help?
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                     </form>
                     @if (session()->has('loginError'))
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            {{ session('loginError') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            </button>
-                        </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('loginError') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                        </button>
+                    </div>
                     @endif
 
                 </div>
@@ -77,6 +78,18 @@
 {{-- Bootstrap 5 --}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+<script src="{{ asset('vendor/sweetalert2/sweetalert2.all.min.js') }}"></script>
+@include('sweetalert::alert')
+
+<script>
+    @if(session('error'))
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: "{{ session('error') }}",
+            });
+        @endif
 </script>
 
 </html>
