@@ -15,11 +15,14 @@
 
             @foreach ($dataMainCol[0] as $item)
             <tr>
-                <td class="cell-2" style="vertical-align : middle;text-align:center;" rowspan="3">{{ $item }}</td>
+                <td class="cell-2"
+                    style="vertical-align : middle;text-align:center; padding-left:6rem; padding-right:6rem"
+                    rowspan="3">{{ $item }}</td>
             </tr>
             @endforeach
             <tr>
-                <td class="bg-info">TEKNISI</td>
+                <td class="bg-info" style="vertical-align : middle;text-align:center; padding:0;" rowspan="2">TEKNISI
+                </td>
                 <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">Splicer</td>
                 <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">OTDR</td>
                 <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">OTDR MINI</td>
@@ -197,28 +200,29 @@
                 </td>
             </tr>
             <tr>
-                <td class=""></td>
                 @php
                 $columns = [
                 ['class' => 'column1', 'text' => 'RASIO'],
-                ['class' => 'column1', 'text' => 'KEBUTUHAN KONTRAK'],
-                ['class' => 'bg-success', 'text' => 'PEMENUHAN'],
+                ['class' => 'column1', 'text' => 'KK'],
+                ['class' => 'bg-success', 'text' => 'PMNHN'],
                 ['class' => 'bg-danger', 'text' => 'GAP']
                 ];
                 $timesToLoop = 6;
                 $timesToLoop2 = 81;
                 @endphp
                 @for ($i = 0; $i < $timesToLoop; $i++) @foreach ($columns as $item) <td class="{{ $item['class'] }}"
-                    style="vertical-align : middle;text-align:center;">{{ $item['text'] }}</td>
+                    style="vertical-align : middle;text-align:center; padding:0;">{{ $item['text'] }}</td>
                     @endforeach
                     @endfor
-                    <td class="column1" style="vertical-align : middle;text-align:center;">RASIO</td>
-                    <td class="column1" style="vertical-align : middle;text-align:center;">KEBUTUHAN KONTRAK</td>
-                    <td class="bg-success" style="vertical-align : middle;text-align:center;">PEMENUHAN</td>
-                    <td class="bg-success" style="vertical-align : middle;text-align:center;">NATURA</td>
-                    <td class="bg-danger" style="vertical-align : middle;text-align:center;">GAP</td>
+                    <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">RASIO</td>
+                    <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">KK
+                    </td>
+                    <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">PMNHN</td>
+                    <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">NATURA</td>
+                    <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">GAP</td>
                     @for ($i = 0; $i < $timesToLoop2; $i++) @foreach ($columns as $item) <td
-                        class="{{ $item['class'] }}" style="vertical-align : middle;text-align:center;">{{ $item['text']
+                        class="{{ $item['class'] }}" style="vertical-align : middle;text-align:center; padding:0;">{{
+                        $item['text']
                         }}</td>
                         @endforeach
                         @endfor
@@ -229,7 +233,7 @@
         <tbody>
             @for ($i = 0; $i < count($dataKontrak); $i++) <tr>
                 @foreach ($dataKontrak[$i] as $item)
-                <td style="vertical-align : middle;text-align:center;padding:0;">{{ $item }}</td>
+                <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                 @endforeach
                 </tr>
                 @endfor
