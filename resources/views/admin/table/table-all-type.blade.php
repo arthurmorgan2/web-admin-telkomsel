@@ -11,7 +11,6 @@
     <table class="table table-all table-bordered" id="dataTable">
         <thead class="text-center">
             <tr>
-
                 <th class="cell-1"
                     style="vertical-align : middle;text-align:center;padding-left:2rem;padding-right:2rem;font-size:12px;"
                     rowspan="4">
@@ -77,19 +76,14 @@
             </tr>
             <tr style="font-size: 9px">
 
-                <th class="text-center cell-2" style="vertical-align : middle;text-align:center; padding:0;">ONT
-                    _ZTE
-                    _F609_
-                    V5.3</th>
+                <th class="text-center cell-2" style="vertical-align : middle;text-align:center; padding:0;">ONT_ZTE_
+                    F609_V5.3</th>
+                <th class="text-center bg-danger" style="vertical-align : middle;text-align:center; padding:0;">ONT_ZTE_
+                    F670</th>
                 <th class="text-center bg-danger" style="vertical-align : middle;text-align:center; padding:0;">ONT
-                    _ZTE
-                    _F670</th>
-                <th class="text-center bg-danger" style="vertical-align : middle;text-align:center; padding:0;">ONT
-                    _ZTE
-                    _F670_
+                    _ZTE_F670_
                     V2.0</th>
-                <th class="text-center bg-info" style="vertical-align : middle;text-align:center; padding:0;">ONT
-                    _ZTE
+                <th class="text-center bg-info" style="vertical-align : middle;text-align:center; padding:0;">ONT_ZTE
                     _F670L</th>
                 <th class="text-center bg-info" style="vertical-align : middle;text-align:center; padding:0;">ONT
                     _HUAWEI

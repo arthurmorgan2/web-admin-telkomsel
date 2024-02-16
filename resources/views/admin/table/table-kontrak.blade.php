@@ -21,7 +21,7 @@
             </tr>
             @endforeach
             <tr>
-                <td class="bg-info" style="vertical-align : middle;text-align:center; padding:0;" rowspan="2">TEKNISI
+                <td class="bg-info" style="vertical-align : middle;text-align:center; padding:0;">TEKNISI
                 </td>
                 <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">Splicer</td>
                 <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">OTDR</td>
@@ -200,6 +200,9 @@
                 </td>
             </tr>
             <tr>
+                <td>
+
+                </td>
                 @php
                 $columns = [
                 ['class' => 'column1', 'text' => 'RASIO'],
