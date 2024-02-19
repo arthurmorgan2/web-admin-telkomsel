@@ -60,25 +60,24 @@
                     _HUAWEI
                     _HG8245H5</th>
                 {{-- Nokia --}}
-                <th style="vertical-align : middle;text-align:center; padding:0;">ONT
+                <th class="px-1" style="vertical-align : middle;text-align:center; padding:0;">ONT
                     _NOKIA_
                     G240WL</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info px-1">ONT
                     _NOKIA_
-                    G-2425G-A</th>
+                    G-242
+                    5G-A</th>
                 {{-- ZTE --}}
                 <th style="vertical-align : middle;text-align:center; padding:0;">ONT
-                    _ZTE_
-                    F609
+                    _ZTE_F609
                     _V5.3</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT
-                    _ZTE_
-                    F670</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT
-                    _ZTE_
-                    F670
+                <th class="bg-danger px-1" style="vertical-align : middle;text-align:center; padding:0;">ONT
+                    _ZTE_F6
+                    70</th>
+                <th class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">ONT
+                    _ZTE_F670
                     V2.0</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT
+                <th class="bg-info px-2" style="vertical-align : middle;text-align:center; padding:0;">ONT
                     _ZTE_
                     F670L</th>
                 {{-- Fiberhome --}}
