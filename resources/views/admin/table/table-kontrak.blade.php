@@ -2,10 +2,26 @@
     <div class="col-md-12 p-1 text-center">
         <label class="location-name" for="location">Data Kontrak</label>
     </div>
-
-    <div>
-        <label for="search">Search:</label>
-        <input type="text" id="search" oninput="filterTable()">
+    <div class="d-flex justify-content-between mx-2 align-items-center">
+        <div class="">
+            <form class="d-flex flex-row gap-2" action="{{ url('/data-kontrak/update-cell') }}" method="POST">
+                @csrf
+                <select class="custom-select" name="value" id="value">
+                    <option value="" selected>Pilih Tempat</option>
+                    @for ($i = 0; $i < count($dropdownValue); $i++) @foreach ($dropdownValue[$i] as $items ) <option
+                        value="{{ $items }}">
+                        {{ $items }}
+                        </option> @endforeach
+                        @endfor
+                </select>
+                {{-- <input class="form-control col-md-6" type="text" name="value" placeholder="Nama Tempat"> --}}
+                <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="">
+            <label for="search">Search:</label>
+            <input type="text" id="search" oninput="filterTable()">
+        </div>
     </div>
 
     <hr>

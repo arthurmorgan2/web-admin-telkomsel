@@ -41,6 +41,7 @@ Route::get('/data-psb', [PsbController::class, 'fetchDataPsb'])->name("fetchData
 //Data KONTRAK ROUTE
 Route::get('/data-kontrak', [KontrakController::class, 'showDataKontrak'])->name("showDataKontrak")->middleware("auth");
 Route::get('/data-kontrak', [KontrakController::class, 'fetchKontrak'])->name("fetchKontrak")->middleware("auth");
+Route::post('/data-kontrak/update-cell', [KontrakController::class, 'updateCellValue']);
 
 //Data KONTRAK ROUTE
 Route::get('/kelola-admin', [AdminController::class, 'showDataAdmin'])->name("showDataAdmin")->middleware("auth");
