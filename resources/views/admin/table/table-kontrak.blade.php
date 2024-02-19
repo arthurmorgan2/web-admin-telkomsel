@@ -35,10 +35,14 @@
                     style="vertical-align : middle;text-align:center; padding-left:6rem; padding-right:6rem"
                     rowspan="3">{{ $item }}</td>
             </tr>
+            <tr>
+                <td class="bg-info px-1" style="vertical-align : middle;text-align:center; padding:0;" rowspan="2">
+                    TEKNISI
+                </td>
+            </tr>
             @endforeach
             <tr>
-                <td class="bg-info" style="vertical-align : middle;text-align:center; padding:0;">TEKNISI
-                </td>
+
                 <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">Splicer</td>
                 <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">OTDR</td>
                 <td class="bg-warning" style="vertical-align : middle;text-align:center;" colspan="4">OTDR MINI</td>
@@ -216,15 +220,14 @@
                 </td>
             </tr>
             <tr>
-                <td>
-
-                </td>
+                <td></td>
+                <td></td>
                 @php
                 $columns = [
-                ['class' => 'column1', 'text' => 'RASIO'],
-                ['class' => 'column1', 'text' => 'KK'],
+                ['class' => 'column1 px-1', 'text' => 'RASIO'],
+                ['class' => 'column1 px-2', 'text' => 'KK'],
                 ['class' => 'bg-success', 'text' => 'PMNHN'],
-                ['class' => 'bg-danger', 'text' => 'GAP']
+                ['class' => 'bg-danger px-2', 'text' => 'GAP']
                 ];
                 $timesToLoop = 6;
                 $timesToLoop2 = 81;
@@ -233,12 +236,12 @@
                     style="vertical-align : middle;text-align:center; padding:0;">{{ $item['text'] }}</td>
                     @endforeach
                     @endfor
-                    <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">RASIO</td>
-                    <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">KK
+                    <td class="column1 px-1" style="vertical-align : middle;text-align:center; padding:0;">RASIO</td>
+                    <td class="column1 px-2" style="vertical-align : middle;text-align:center; padding:0;">KK
                     </td>
                     <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">PMNHN</td>
                     <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">NATURA</td>
-                    <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">GAP</td>
+                    <td class="bg-danger px-2" style="vertical-align : middle;text-align:center; padding:0;">GAP</td>
                     @for ($i = 0; $i < $timesToLoop2; $i++) @foreach ($columns as $item) <td
                         class="{{ $item['class'] }}" style="vertical-align : middle;text-align:center; padding:0;">{{
                         $item['text']

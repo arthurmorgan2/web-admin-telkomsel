@@ -18,7 +18,7 @@
                 <th class="text-center ont-main-text" colspan="15">ONT</th>
                 <th class="text-center ont-main-text bg-warning" colspan="6">STB</th>
                 <th class="text-center ont-main-text bg-warning" colspan="1"></th>
-                <th class="text-center ont-main-text bg-info" colspan="4"></th>
+                <th class="text-center ont-main-text bg-info" colspan="5"></th>
             </tr>
 
             <tr>
@@ -30,7 +30,7 @@
                 <th class="text-center ont-main-text bg-warning" colspan="2">Fiberhome</th>
                 <th class="text-center ont-main-text bg-warning" colspan="4">ZTE</th>
                 <th class="bg-warning" style="vertical-align : middle;text-align:center;" rowspan="3">GT</th>
-                <th class="text-center ont-main-text bg-info" colspan="4">Orbit</th>
+                <th class="text-center ont-main-text bg-info" colspan="5">Orbit</th>
             </tr>
             <tr class="ont-text">
                 {{-- Fiberhome --}}
@@ -120,6 +120,7 @@
                     MF920US</th>
                 <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">KP
                     SMOOA</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">REMOTE</th>
             </tr>
         </thead>
         <tbody>
