@@ -27,27 +27,32 @@ Route::controller(LoginController::class)->group(function () {
     Route::get('/logout', 'logout');
 })->middleware("guest");
 
-Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->name("dashboard")->middleware("auth");
-//Data NTE Route
-Route::get('/data-nte', [DataController::class, 'showDataNTE'])->name("nte")->middleware("auth");
-//Data ALL TYPE ROUTE
-Route::get('/data-all', [DataController::class, 'showDataALL'])->name("showDataALL")->middleware("auth");
-//Data ALL TYPE ROUTE
-Route::get('/data-alert', [AlertController::class, 'showDataAlert'])->name("showDataAlert")->middleware("auth");
-Route::get('/data-alert', [AlertController::class, 'fetchAlert'])->name("fetchAlert")->middleware("auth");
-//Data PSB ROUTE
-Route::get('/data-psb', [PsbController::class, 'showDataPsb'])->name("showDataPsb")->middleware("auth");
-Route::get('/data-psb', [PsbController::class, 'fetchDataPsb'])->name("fetchDataPsb")->middleware("auth");
-//Data KONTRAK ROUTE
-Route::get('/data-kontrak', [KontrakController::class, 'showDataKontrak'])->name("showDataKontrak")->middleware("auth");
-Route::get('/data-kontrak', [KontrakController::class, 'fetchKontrak'])->name("fetchKontrak")->middleware("auth");
-Route::post('/data-kontrak/update-cell', [KontrakController::class, 'updateCellValue']);
+Route::middleware("auth")->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->name("dashboard");
+    //Data NTE Route
+    Route::get('/data-nte', [DataController::class, 'showDataNTE'])->name("nte");
+    //Data ALL TYPE ROUTE
+    Route::get('/data-all', [DataController::class, 'showDataALL'])->name("showDataALL");
+    //Data ALL TYPE ROUTE
+    Route::get('/data-alert', [AlertController::class, 'showDataAlert'])->name("showDataAlert");
+    Route::get('/data-alert', [AlertController::class, 'fetchAlert'])->name("fetchAlert");
+    //Data PSB ROUTE
+    Route::get('/data-psb', [PsbController::class, 'showDataPsb'])->name("showDataPsb");
+    Route::get('/data-psb', [PsbController::class, 'fetchDataPsb'])->name("fetchDataPsb");
+    //Data KONTRAK ROUTE
+    Route::get('/data-kontrak', [KontrakController::class, 'showDataKontrak'])->name("showDataKontrak");
+    Route::get('/data-kontrak', [KontrakController::class, 'fetchKontrak'])->name("fetchKontrak");
+    Route::post('/data-kontrak/update-cell', [KontrakController::class, 'updateCellValue']);
+});
 
-//Data KONTRAK ROUTE
-Route::get('/kelola-admin', [AdminController::class, 'showDataAdmin'])->name("showDataAdmin")->middleware("auth");
-Route::post('/kelola-admin/store', [AdminController::class, 'store'])->name("store")->middleware("auth");
-Route::put('/kelola-admin/update/{id}', [AdminController::class, 'update'])->name("update")->middleware("auth");
-Route::delete('/kelola-admin/delete/{id}', [AdminController::class, 'delete'])->name("delete")->middleware("auth");
+Route::middleware("auth")->group(function () {
+    //Kelola admin route
+    Route::get('/kelola-admin', [AdminController::class, 'showDataAdmin'])->name("showDataAdmin");
+    Route::post('/kelola-admin/store', [AdminController::class, 'store'])->name("store");
+    Route::put('/kelola-admin/update/{id}', [AdminController::class, 'update'])->name("update");
+    Route::delete('/kelola-admin/delete/{id}', [AdminController::class, 'delete'])->name("delete");
+});
+
 
 
 
