@@ -17,231 +17,54 @@ class AlertController extends Controller
     {
         $spreadsheetID ="1UC7ghJHsFIQOms8htwVO37NBD5AO6Uo19xZwV00Sr8A";
         $speadsheetName = "Copy of Stock ALERT R5 TSEL new";
-
-        //DATA ALERT 1
-        $alert = Sheets::spreadsheet($spreadsheetID)->sheet($speadsheetName)->range("A5:AL10")->get();
+        //DATA PSB
+        $psb = Sheets::spreadsheet('1UC7ghJHsFIQOms8htwVO37NBD5AO6Uo19xZwV00Sr8A')->sheet('Copy of Stock ALERT R5 TSEL new')->range("B124:N138")->get();
+        $header = $psb->pull(0);
+        $values = Sheets::collection($header, $psb);
+        $dataPsb = array_values($values->toArray());
+        //DATA ALERT
+        $alert = Sheets::spreadsheet($spreadsheetID)->sheet($speadsheetName)->range("A6:AM118")->get();
         $headerAlert = $alert->pull(0);
         $valuesAlert = Sheets::collection($headerAlert, $alert);
         $dataAlert = array_values($valuesAlert->toArray());
-        // dd($dataAlert);
-        $alertTotal = Sheets::spreadsheet($spreadsheetID)->sheet($speadsheetName)->range("G11:AL12")->get();
-        $headerAlertTotal = $alertTotal->pull(0);
-        $valuesAlertTotal = Sheets::collection($headerAlertTotal, $alertTotal);
-        $dataAlertTotal = array_values($valuesAlertTotal->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT2
-        $alert2 = Sheets::spreadsheet($spreadsheetID)->sheet($speadsheetName)->range("A13:AL18")->get();
-        $headerAlert2 = $alert2->pull(0);
-        $valuesAlert2 = Sheets::collection($headerAlert2, $alert2);
-        $dataAlert2 = array_values($valuesAlert2->toArray());
-        // dd($dataAlert);
-        $alertTotal2 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G19:AL20")->get();
-        $headerAlertTotal2 = $alertTotal2->pull(0);
-        $valuesAlertTotal2 = Sheets::collection($headerAlertTotal2, $alertTotal2);
-        $dataAlertTotal2 = array_values($valuesAlertTotal2->toArray());
-        // dd($dataAlertTotal2);
-
-        //DATA ALERT3
-        $alert3 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A21:AL29")->get();
-        $headerAlert3 = $alert3->pull(0);
-        $valuesAlert3 = Sheets::collection($headerAlert3, $alert3);
-        $dataAlert3 = array_values($valuesAlert3->toArray());
-        // dd($dataAlert);
-        $alertTotal3 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G30:AL31")->get();
-        $headerAlertTotal3 = $alertTotal3->pull(0);
-        $valuesAlertTotal3 = Sheets::collection($headerAlertTotal3, $alertTotal3);
-        $dataAlertTotal3 = array_values($valuesAlertTotal3->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT4
-        $alert4 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A32:AL41")->get();
-        $headerAlert4 = $alert4->pull(0);
-        $valuesAlert4 = Sheets::collection($headerAlert4, $alert4);
-        $dataAlert4 = array_values($valuesAlert4->toArray());
-        // dd($dataAlert);
-        $alertTotal4 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G42:AL43")->get();
-        $headerAlertTotal4 = $alertTotal4->pull(0);
-        $valuesAlertTotal4 = Sheets::collection($headerAlertTotal4, $alertTotal4);
-        $dataAlertTotal4 = array_values($valuesAlertTotal4->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT4
-        $alert4 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A32:AL41")->get();
-        $headerAlert4 = $alert4->pull(0);
-        $valuesAlert4 = Sheets::collection($headerAlert4, $alert4);
-        $dataAlert4 = array_values($valuesAlert4->toArray());
-        // dd($dataAlert);
-        $alertTotal4 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G42:AL43")->get();
-        $headerAlertTotal4 = $alertTotal4->pull(0);
-        $valuesAlertTotal4 = Sheets::collection($headerAlertTotal4, $alertTotal4);
-        $dataAlertTotal4 = array_values($valuesAlertTotal4->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT5
-        $alert5 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A44:AL48")->get();
-        $headerAlert5 = $alert5->pull(0);
-        $valuesAlert5 = Sheets::collection($headerAlert5, $alert5);
-        $dataAlert5 = array_values($valuesAlert5->toArray());
-        // dd($dataAlert);
-        $alertTotal5 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G49:AL50")->get();
-        $headerAlertTotal5 = $alertTotal5->pull(0);
-        $valuesAlertTotal5 = Sheets::collection($headerAlertTotal5, $alertTotal5);
-        $dataAlertTotal5 = array_values($valuesAlertTotal5->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT6
-        $alert6 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A51:AL60")->get();
-        $headerAlert6 = $alert6->pull(0);
-        $valuesAlert6 = Sheets::collection($headerAlert6, $alert6);
-        $dataAlert6 = array_values($valuesAlert6->toArray());
-        // dd($dataAlert);
-        $alertTotal6 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A61:AL62")->get();
-        $headerAlertTotal6 = $alertTotal6->pull(0);
-        $valuesAlertTotal6 = Sheets::collection($headerAlertTotal6, $alertTotal6);
-        $dataAlertTotal6 = array_values($valuesAlertTotal6->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT6
-        $alert6 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A51:AL60")->get();
-        $headerAlert6 = $alert6->pull(0);
-        $valuesAlert6 = Sheets::collection($headerAlert6, $alert6);
-        $dataAlert6 = array_values($valuesAlert6->toArray());
-        // dd($dataAlert);
-        $alertTotal6 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G61:AL62")->get();
-        $headerAlertTotal6 = $alertTotal6->pull(0);
-        $valuesAlertTotal6 = Sheets::collection($headerAlertTotal6, $alertTotal6);
-        $dataAlertTotal6 = array_values($valuesAlertTotal6->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT7
-        $alert7 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A63:AL73")->get();
-        $headerAlert7 = $alert7->pull(0);
-        $valuesAlert7 = Sheets::collection($headerAlert7, $alert7);
-        $dataAlert7 = array_values($valuesAlert7->toArray());
-        // dd($dataAlert);
-        $alertTotal7 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G74:AL75")->get();
-        $headerAlertTotal7 = $alertTotal7->pull(0);
-        $valuesAlertTotal7 = Sheets::collection($headerAlertTotal7, $alertTotal7);
-        $dataAlertTotal7 = array_values($valuesAlertTotal7->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT8
-        $alert8 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A76:AL82")->get();
-        $headerAlert8 = $alert8->pull(0);
-        $valuesAlert8 = Sheets::collection($headerAlert8, $alert8);
-        $dataAlert8 = array_values($valuesAlert8->toArray());
-        // dd($dataAlert);
-        $alertTotal8 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G83:AL84")->get();
-        $headerAlertTotal8 = $alertTotal8->pull(0);
-        $valuesAlertTotal8 = Sheets::collection($headerAlertTotal8, $alertTotal8);
-        $dataAlertTotal8 = array_values($valuesAlertTotal8->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT9
-        $alert9 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A85:AL95")->get();
-        $headerAlert9 = $alert9->pull(0);
-        $valuesAlert9 = Sheets::collection($headerAlert9, $alert9);
-        $dataAlert9 = array_values($valuesAlert9->toArray());
-        // dd($dataAlert);
-        $alertTotal9 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G96:AL97")->get();
-        $headerAlertTotal9 = $alertTotal9->pull(0);
-        $valuesAlertTotal9 = Sheets::collection($headerAlertTotal9, $alertTotal9);
-        $dataAlertTotal9 = array_values($valuesAlertTotal9->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT10
-        $alert10 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A98:AL103")->get();
-        $headerAlert10 = $alert10->pull(0);
-        $valuesAlert10 = Sheets::collection($headerAlert10, $alert10);
-        $dataAlert10 = array_values($valuesAlert10->toArray());
-        // dd($dataAlert);
-        $alertTotal10 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G104:AL105")->get();
-        $headerAlertTotal10 = $alertTotal10->pull(0);
-        $valuesAlertTotal10 = Sheets::collection($headerAlertTotal10, $alertTotal10);
-        $dataAlertTotal10 = array_values($valuesAlertTotal10->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT11
-        $alert11 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A106:AL114")->get();
-        $headerAlert11 = $alert11->pull(0);
-        $valuesAlert11 = Sheets::collection($headerAlert11, $alert11);
-        $dataAlert11 = array_values($valuesAlert11->toArray());
-        // dd($dataAlert);
-        $alertTotal11 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G115:AL116")->get();
-        $headerAlertTotal11 = $alertTotal11->pull(0);
-        $valuesAlertTotal11 = Sheets::collection($headerAlertTotal11, $alertTotal11);
-        $dataAlertTotal11 = array_values($valuesAlertTotal11->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT12
-        $alert12 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A117:AL122")->get();
-        $headerAlert12 = $alert12->pull(0);
-        $valuesAlert12 = Sheets::collection($headerAlert12, $alert12);
-        $dataAlert12 = array_values($valuesAlert12->toArray());
-        // dd($dataAlert);
-        $alertTotal12 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G123:AL124")->get();
-        $headerAlertTotal12 = $alertTotal12->pull(0);
-        $valuesAlertTotal12 = Sheets::collection($headerAlertTotal12, $alertTotal12);
-        $dataAlertTotal12 = array_values($valuesAlertTotal12->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT13
-        $alert13 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A125:AL138")->get();
-        $headerAlert13 = $alert13->pull(0);
-        $valuesAlert13 = Sheets::collection($headerAlert13, $alert13);
-        $dataAlert13 = array_values($valuesAlert13->toArray());
-        // dd($dataAlert);
-        $alertTotal13 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("G139:AL140")->get();
-        $headerAlertTotal13 = $alertTotal13->pull(0);
-        $valuesAlertTotal13 = Sheets::collection($headerAlertTotal13, $alertTotal13);
-        $dataAlertTotal13 = array_values($valuesAlertTotal3->toArray());
-        // dd($dataAlertTotal);
-
-        //DATA ALERT14
-        $alert14 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("A141:AL142")->get();
-        $headerAlert14 = $alert14->pull(0);
-        $valuesAlert14 = Sheets::collection($headerAlert14, $alert14);
-        $dataAlert14 = array_values($valuesAlert14->toArray());
-        // dd($dataAlert);
-        //DATA ALERT15
-        $alert15 = Sheets::spreadsheet( $spreadsheetID)->sheet($speadsheetName)->range("D143:AL144")->get();
-        $headerAlert15 = $alert15->pull(0);
-        $valuesAlert15 = Sheets::collection($headerAlert15, $alert15);
-        $dataAlert15 = array_values($valuesAlert15->toArray());
-        // dd($dataAlert);
 
 
-        return view('admin.data-alert', compact(
-            'dataAlert',
-            'dataAlertTotal',
-            'dataAlert2',
-            'dataAlertTotal2',
-            'dataAlert3',
-            'dataAlertTotal3',
-            'dataAlert4',
-            'dataAlertTotal4',
-            'dataAlert5',
-            'dataAlertTotal5',
-            'dataAlert6',
-            'dataAlertTotal6',
-            'dataAlert7',
-            'dataAlertTotal7',
-            'dataAlert8',
-            'dataAlertTotal8',
-            'dataAlert9',
-            'dataAlertTotal9',
-            'dataAlert10',
-            'dataAlertTotal10',
-            'dataAlert11',
-            'dataAlertTotal11',
-            'dataAlert12',
-            'dataAlertTotal12',
-            'dataAlert13',
-            'dataAlertTotal13',
-            'dataAlert14',
-            'dataAlert15',
-        ));
+        $slicedDataPsb = array_slice($dataPsb, 0, 13);
+        $slicedDataPsbTotal = array_slice($dataPsb, 13, 1);
+        $slicedDataAlert = array_slice($dataAlert, 0, 5);
+        $slicedDataAlert2 = array_slice($dataAlert, 6, 5);
+        $slicedDataAlert3 = array_slice($dataAlert, 12, 8);
+        $slicedDataAlert4 = array_slice($dataAlert, 21, 9);
+        $slicedDataAlert5 = array_slice($dataAlert, 31, 4);
+        $slicedDataAlert6 = array_slice($dataAlert, 36, 9);
+        $slicedDataAlert7 = array_slice($dataAlert, 46, 10);
+        $slicedDataAlert8 = array_slice($dataAlert, 57, 6);
+        $slicedDataAlert9 = array_slice($dataAlert, 64, 10);
+        $slicedDataAlert10 = array_slice($dataAlert, 75, 5);
+        $slicedDataAlert11 = array_slice($dataAlert, 81, 8);
+        $slicedDataAlert12 = array_slice($dataAlert, 90, 5);
+        $slicedDataAlert13 = array_slice($dataAlert, 96, 13);
+        $slicedDataAlert14 = array_slice($dataAlert, 110, 1);
+        $slicedDataTotal = array_slice($dataAlert, 5, 1);
+        $slicedDataTotal2 = array_slice($dataAlert, 11, 1);
+        $slicedDataTotal3 = array_slice($dataAlert, 20, 1);
+        $slicedDataTotal4 = array_slice($dataAlert, 30, 1);
+        $slicedDataTotal5 = array_slice($dataAlert, 35, 1);
+        $slicedDataTotal6 = array_slice($dataAlert, 45, 1);
+        $slicedDataTotal7 = array_slice($dataAlert, 56, 1);
+        $slicedDataTotal8 = array_slice($dataAlert, 63, 1);
+        $slicedDataTotal9 = array_slice($dataAlert, 74, 1);
+        $slicedDataTotal10 = array_slice($dataAlert, 80, 1);
+        $slicedDataTotal11 = array_slice($dataAlert, 89, 1);
+        $slicedDataTotal12 = array_slice($dataAlert, 95, 1);
+        $slicedDataTotal13 = array_slice($dataAlert, 109, 1);
+        $slicedDataTotal14 = array_slice($dataAlert, 111, 1);
+        // dd($slicedDataAlert14);
+
+        return view('admin.data-alert', compact('dataAlert', 'slicedDataAlert', 'slicedDataTotal', 'slicedDataAlert2', 'slicedDataTotal2', 'slicedDataAlert3', 'slicedDataTotal3', 'slicedDataAlert4', 'slicedDataTotal4', 'slicedDataAlert5', 'slicedDataTotal5', 'slicedDataAlert6', 'slicedDataTotal6', 'slicedDataAlert7', 'slicedDataTotal7', 'slicedDataAlert8', 'slicedDataTotal8',
+    'slicedDataAlert9', 'slicedDataTotal9', 'slicedDataAlert10', 'slicedDataTotal10', 'slicedDataAlert11', 'slicedDataTotal11', 'slicedDataAlert12', 'slicedDataTotal12', 'slicedDataAlert13', 'slicedDataTotal13',
+    'slicedDataAlert14', 'slicedDataTotal14', 'slicedDataPsb', 'slicedDataPsbTotal'
+    ));
 
     }
 }

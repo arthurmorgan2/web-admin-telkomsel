@@ -22,12 +22,37 @@
                             </p>
                         </a>
                     <li class="nav-item">
-                        <a href="/data-nte" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-database"></i>
                             <p>
-                                NTE Telkomsel
+                                NTE
+                                <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/data-nte" class="nav-link">
+                                    <i class="nav-icon fas fa-network-wired"></i>
+                                    <p>NTE Telkomsel</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/data-telkom" class="nav-link">
+                                    <i class="nav-icon fas fa-table"></i>
+                                    <p>NTE Telkom</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/data-alert" class="nav-link">
+                                    <i class="nav-icon fas fa-bell"></i>
+                                    <p>Alert R5 TSEL</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="/data-all" class="nav-link">
@@ -44,8 +69,8 @@
                                 Alert R5 TSEL
                             </p>
                         </a>
-                    </li>
-                    <li class="nav-item">
+                    </li> --}}
+                    {{-- <li class="nav-item">
                         <a href="/data-psb" class="nav-link">
                             <i class="nav-icon fas fa-square-plus"></i>
                             <p>

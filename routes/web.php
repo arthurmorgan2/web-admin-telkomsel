@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\DummyController;
 use App\Http\Controllers\AlertController;
+use App\Http\Controllers\DataTelkomController;
 use App\Http\Controllers\KontrakController;
 use App\Http\Controllers\PsbController;
 
@@ -43,6 +44,10 @@ Route::middleware("auth")->group(function () {
     Route::get('/data-kontrak', [KontrakController::class, 'showDataKontrak'])->name("showDataKontrak");
     Route::get('/data-kontrak', [KontrakController::class, 'fetchKontrak'])->name("fetchKontrak");
     Route::post('/data-kontrak/update-cell', [KontrakController::class, 'updateCellValue']);
+    //Data Telkom
+    Route::get('/data-telkom', [DataTelkomController::class, 'showDataTelkom'])->name("showDataTelkom");
+    Route::get('/data-telkom', [DataTelkomController::class, 'fetchDataTelkom'])->name("fetchDataTelkom");
+
 });
 
 Route::middleware("auth")->group(function () {

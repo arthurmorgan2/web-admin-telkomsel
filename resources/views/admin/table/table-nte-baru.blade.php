@@ -8,7 +8,7 @@
         <input type="text" id="search" oninput="filterTable()">
     </div>
 
-    <table class="table h-25 table-bordered" id="dataTable">
+    <table class="table table-bordered" id="dataTable">
         <thead class="text-center">
             <tr>
                 {{-- <th style="vertical-align : middle;text-align:center;" rowspan="3">No</th> --}}
@@ -130,43 +130,6 @@
                 @endforeach
                 </tr>
                 @endfor
-                {{-- @foreach ($ntebaru as $item)
-                <tr>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->witel }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_FIBERHOME_HG6145D2 }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_FIBERHOME_HG6145F }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_FIBERHOME_HG6245N }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_FIBERHOME_HG6243C }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_HUAWEI_HG8145V5 }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_HUAWEI_HG8245U }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_HUAWEI_HG8245W5_6T }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_HUAWEI_HG8245H5 }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_NOKIA_G240WL }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_NOKIA_G_2425G_A }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_ZTE_F609_V5_3 }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_ZTE_F670 }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_ZTE_F670_V2_0 }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ONT_ZTE_F670L }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->grand_total_1 }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->SetTopBoxIPTV_FIBERHOME_HG680FJ }}
-                    </td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->SetTopBox_ZTE_ZX10_B866F_V1_1 }}
-                    </td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->SetTopBox_ZTE_B860H_V5_0 }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->grand_total_2 }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ORBIT_REGULER }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->ORBIT_SS_ex_ROUTER_HKM0128a }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->Orbit_IP_ZTE_MF920US }}</td>
-                    <td style="vertical-align : middle;text-align:center;">{{ $item->KARTU_PERDANA_SMOOA }}</td>
-                </tr>
-                @endforeach --}}
-                {{-- <tr>
-                    <td style="vertical-align : middle;text-align:center;" colspan="2">Total</td>
-                    @foreach ($ntebaru as $item)
-                    <td>{{ $item->total }}</td>
-                    @endforeach
-                </tr> --}}
-
         </tbody>
 
     </table>

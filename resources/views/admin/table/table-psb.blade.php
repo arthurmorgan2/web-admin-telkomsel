@@ -13,7 +13,7 @@
             <tr>
                 <th class="bg-warning"
                     style="vertical-align : middle;text-align:center;padding-left:3rem;padding-right:3rem;font-size:12px;"
-                    colspan="12">
+                    colspan="13">
                     PREDIKSI KETAHANAN STOCK WH AREA + WH SO</th>
             </tr>
             <tr>
@@ -23,7 +23,7 @@
                     WITEL</th>
                 <th class="column1"
                     style="vertical-align : middle;text-align:center;padding-left:3rem;padding-right:3rem;font-size:12px;"
-                    colspan="6">
+                    colspan="7">
                     STOCK AREA</th>
                 <th class="column1"
                     style="vertical-align : middle;text-align:center;padding-left:3rem;padding-right:3rem;font-size:12px;"
@@ -57,6 +57,9 @@
                 <th class="bg-success"
                     style="vertical-align : middle;text-align:center;padding-left:3rem;padding-right:3rem;font-size:12px;">
                     ONT READY</th>
+                <th class="bg-success"
+                    style="vertical-align : middle;text-align:center;padding-left:3rem;padding-right:3rem;font-size:12px;">
+                    ONT READY NOKIA DB</th>
                 <th class="bg-warning"
                     style="vertical-align : middle;text-align:center;padding-left:3rem;padding-right:3rem;font-size:12px;">
                     DAYS ALL ONT</th>
@@ -69,18 +72,20 @@
             </tr>
         </thead>
         <tbody>
-            @for ($i = 0; $i < count($data); $i++) <tr>
-                @foreach ($data[$i] as $item)
-                <td style="vertical-align : middle;text-align:center;padding:0;">{{ $item }}</td>
+            @for ($i = 0; $i < count($slicedDataPsb); $i++) <tr>
+                @foreach ($slicedDataPsb[$i] as $item)
+                <td style="vertical-align : middle;text-align:center; padding:0;">
+                    {{ $item }}
+                </td>
                 @endforeach
-                </tr>
                 @endfor
-
                 <tr>
-                    @foreach ($dataTotal[0] as $item)
-                    <td class="cell-2"
-                        style="vertical-align : middle;text-align:center; padding:0; white-space:nowrap;">{{ $item
-                        }}</td>
+                    @foreach ($slicedDataPsbTotal[0] as $key => $item)
+                    <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                        {{
+                        $item
+                        }}
+                    </td>
                     @endforeach
                 </tr>
         </tbody>
