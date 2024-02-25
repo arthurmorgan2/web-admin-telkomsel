@@ -129,11 +129,7 @@
 
                 @for ($i = 0; $i < count($slicedDataAlert2); $i++) <tr>
                     @foreach ($slicedDataAlert2[$i] as $item)
-                    @if ($item == 'SISA STOCK WITEL')
-                    <td style="vertical-align : middle;text-align:center; padding:0;" colspan="2">{{ $item }}</td>
-                    @else
                     <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
-                    @endif
                     @endforeach
                     </tr>
                     @endfor
