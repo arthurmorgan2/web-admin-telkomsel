@@ -8,7 +8,7 @@
         <input type="text" id="search" oninput="filterTable()">
     </div>
 
-    <table class="table table-bordered" id="dataTable">
+    <table class="table table-all table-bordered" id="dataTable">
         <thead class="text-center">
             <tr>
                 {{-- <th style="vertical-align : middle;text-align:center;" rowspan="3">No</th> --}}
@@ -124,12 +124,21 @@
             </tr>
         </thead>
         <tbody>
-            @for ($i = 0; $i < count($dataBaru); $i++) <tr>
-                @foreach ($dataBaru[$i] as $item)
+            @for ($i = 0; $i < count($slicedDataBaru); $i++) <tr>
+                @foreach ($slicedDataBaru[$i] as $item)
                 <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                 @endforeach
                 </tr>
                 @endfor
+                <tr>
+                    @foreach ($slicedDataBaruTotal[0] as $key => $item)
+                    <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                        {{
+                        $item
+                        }}
+                    </td>
+                    @endforeach
+                </tr>
         </tbody>
 
     </table>

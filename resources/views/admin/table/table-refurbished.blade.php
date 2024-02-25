@@ -5,10 +5,10 @@
 
     <div>
         <label for="search">Search:</label>
-        <input type="text" id="search" oninput="filterTable()">
+        <input type="text" id="search3" oninput="filterTable3()">
     </div>
 
-    <table class="table table-bordered" id="dataTable">
+    <table class="table table-all table-bordered" id="dataTable3">
         <thead class="text-center">
             <tr>
                 {{-- <th style="vertical-align : middle;text-align:center;" rowspan="3">No</th> --}}
@@ -128,12 +128,21 @@
             </tr>
         </thead>
         <tbody>
-            @for ($i = 0; $i < count($dataRefurbished); $i++) <tr>
-                @foreach ($dataRefurbished[$i] as $item)
+            @for ($i = 0; $i < count($slicedDataRefurbished); $i++) <tr>
+                @foreach ($slicedDataRefurbished[$i] as $item)
                 <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                 @endforeach
                 </tr>
                 @endfor
+                <tr>
+                    @foreach ($slicedDataRefurbishedTotal[0] as $key => $item)
+                    <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                        {{
+                        $item
+                        }}
+                    </td>
+                    @endforeach
+                </tr>
         </tbody>
 
     </table>
@@ -141,11 +150,11 @@
 </div>
 
 <script>
-    function filterTable() {
+    function filterTable3() {
         var input, filter, table, tr, td, i, j, txtValue;
-        input = document.getElementById("search");
+        input = document.getElementById("search3");
         filter = input.value.toUpperCase();
-        table = document.getElementById("dataTable");
+        table = document.getElementById("dataTable3");
         tr = table.getElementsByTagName("tr");
 
         for (i = 0; i < tr.length; i++) {

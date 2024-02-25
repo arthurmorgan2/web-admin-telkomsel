@@ -5,10 +5,10 @@
 
     <div>
         <label for="search">Search:</label>
-        <input type="text" id="search" oninput="filterTable()">
+        <input type="text" id="search4" oninput="filterTable4()">
     </div>
 
-    <table class="table table-all table-bordered" id="dataTable">
+    <table class="table table-all table-bordered" id="dataTable4">
         <thead class="text-center">
             <tr>
                 {{-- <th style="vertical-align : middle;text-align:center;" rowspan="3">No</th> --}}
@@ -126,11 +126,11 @@
 </div>
 
 <script>
-    function filterTable() {
+    function filterTable4() {
         var input, filter, table, tr, td, i, j, txtValue;
-        input = document.getElementById("search");
+        input = document.getElementById("search4");
         filter = input.value.toUpperCase();
-        table = document.getElementById("dataTable");
+        table = document.getElementById("dataTable4");
         tr = table.getElementsByTagName("tr");
 
         for (i = 0; i < tr.length; i++) {
