@@ -11,63 +11,57 @@
     <table class="table table-all table-bordered" id="dataTable">
         <thead class="text-center">
             <tr>
-                <th class="column1"
-                    style="vertical-align : middle;text-align:center;padding-left:3rem;padding-right:3rem;font-size:12px;"
-                    rowspan="2">
+                <th class="column1" style="vertical-align : middle;text-align:center;font-size:12px;" rowspan="2">
                     NO</th>
                 <th class="column1"
-                    style="vertical-align : middle;text-align:center;padding-left:6rem;padding-right:6rem;font-size:12px;"
+                    style="vertical-align : middle;text-align:center;padding-left:7rem;padding-right:7rem;font-size:12px;"
                     rowspan="2">
                     WITEL</th>
                 <th class="column1"
-                    style="vertical-align : middle;text-align:center;padding-left:6rem;padding-right:6rem;font-size:12px; white-space:nowrap;"
+                    style="vertical-align : middle;text-align:center;padding-left:7rem;padding-right:7rem;font-size:12px; white-space:nowrap;"
                     rowspan="2">
                     WH SO</th>
-                <th class="column1"
-                    style="vertical-align : middle;text-align:center;padding-left:3rem;padding-right:3rem;font-size:12px;"
-                    rowspan="2">
+                <th class="column1" style="vertical-align : middle;text-align:center;font-size:12px;" rowspan="2">
                     JUMLAH
                     STO</th>
-                <th class="column2"
-                    style="vertical-align : middle;text-align:center;padding-left:3rem;padding-right:3rem;font-size:12px;"
-                    rowspan="2">
+                <th class="column2" style="vertical-align : middle;text-align:center;font-size:12px;" rowspan="2">
                     Capacity Max(unit)</th>
-                <th class="column2"
-                    style="vertical-align : middle;text-align:center;padding-left:3rem;padding-right:3rem;font-size:12px;"
-                    rowspan="2">
+                <th class="column2" style="vertical-align : middle;text-align:center;font-size:12px;" rowspan="2">
                     Capacity Status</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;" colspan="9">STOCK
                     SAAT INI NTE BARU</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;" colspan="4">
-                    KEBUTUHAN PSB JATIM BALI NUSRA 20 HARI</th>
+                    KBTHN PSB JATIM BALI NUSRA 20 HR</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;" colspan="2">
-                    STOCK DAYS ACTUAL PSB (20 HARI)</th>
+                    SDA PSB (20 HR)</th>
+                <th class="text-center column1" style="vertical-align : middle;text-align:center; padding:0;"
+                    colspan="2">
+                    GAP KBTHN PSB (20 HR)</th>
+                <th class="text-center bg-success" style="vertical-align : middle;text-align:center; padding:0;">
+                    GAP KBTHN (15 HR)</th>
+                <th class="text-center bg-info" style="vertical-align : middle;text-align:center; padding:0;">
+                    GAP KBTHN (25 HR)</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;" colspan="2">
-                    GAP KEBUTUHAN PSB (20 HARI)</th>
-                <th class="text-center bg-success" style="vertical-align : middle;text-align:center;">
-                    GAP KEBUTUHAN (15 HARI)</th>
-                <th class="text-center bg-info" style="vertical-align : middle;text-align:center;">
-                    GAP KEBUTUHAN (25 HARI)</th>
-                <th class="text-center column1" style="vertical-align : middle;text-align:center;" colspan="2">
-                    KETERANGAN PSB (STOCK DAYS 14 HARI)</th>
+                    KTRNGN PSB (STOCK DAYS 14 HR)</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;" colspan="2">
                     STOCK SAAT INI REFURBISHED</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;" colspan="4">
-                    KEBUTUHAN GGN 15 HARI</th>
+                    KBTHN GGN 15 HR</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;" colspan="2">
-                    DEVIASI KEBUTUHAN GGN</th>
+                    DEVIASI KBTHN GGN</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;" colspan="2">
-                    KETERANGAN GGN</th>
+                    KTRNGN GGN</th>
                 <th class="text-center bg-warning" style="vertical-align : middle;text-align:center;" rowspan="2">
-                    KETERANGAN</th>
+                    KTRNGN</th>
                 <th class="text-center bg-warning"
-                    style="vertical-align : middle;text-align:center; white-space:nowrap;" rowspan="2">
-                    KETERANGAN GGN</th>
+                    style="vertical-align : middle;text-align:center; white-space:nowrap; padding-left:2rem; padding-right:2rem;"
+                    rowspan="2">
+                    KTRNGN GGN</th>
             </tr>
             <tr style="font-size: 9px;">
-                <th class="text-center bg-warning" style="vertical-align : middle;text-align:center; padding:0;">ALL ONT
+                <th class="text-center bg-warning" style="vertical-align : middle;text-align:center;">ALL ONT
                 </th>
-                <th class="text-center bg-danger" style="vertical-align : middle;text-align:center;">ONT VENDOR</th>
+                <th class="text-center bg-danger" style="vertical-align : middle;text-align:center;">ONT VDR</th>
                 <th class="text-center bg-danger" style="vertical-align : middle;text-align:center;">ONT NOKIA SB</th>
                 <th class="text-center bg-danger" style="vertical-align : middle;text-align:center;">ONT NOKIA DB</th>
                 <th class="text-center bg-success" style="vertical-align : middle;text-align:center;">ONT LUAR HOLD
@@ -75,10 +69,10 @@
                 <th class="text-center bg-success" style="vertical-align : middle;text-align:center;">ONT READY NOKIA
                 </th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">STB NEW</th>
-                <th class="text-center column1" style="vertical-align : middle;text-align:center;">STB REFURBISHED</th>
+                <th class="text-center column1" style="vertical-align : middle;text-align:center;">STB REFUR.</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">STB TOTAL</th>
-                <th class="text-center column1" style="vertical-align : middle;text-align:center;">PS HARIAN ONT</th>
-                <th class="text-center column1" style="vertical-align : middle;text-align:center;">PS HARIAN STB</th>
+                <th class="text-center column1" style="vertical-align : middle;text-align:center;">PS HRAN ONT</th>
+                <th class="text-center column1" style="vertical-align : middle;text-align:center;">PS HRAN STB</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">ONT</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">STB</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">DAYS AWAL</th>
@@ -91,8 +85,8 @@
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">STB</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">ONT</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">STB</th>
-                <th class="text-center column1" style="vertical-align : middle;text-align:center;">GGN ONT HARIAN</th>
-                <th class="text-center column1" style="vertical-align : middle;text-align:center;">GGN STB HARIAN</th>
+                <th class="text-center column1" style="vertical-align : middle;text-align:center;">GGN ONT HRAN</th>
+                <th class="text-center column1" style="vertical-align : middle;text-align:center;">GGN STB HRAN</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">ONT</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">STB</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">ONT</th>
@@ -104,7 +98,13 @@
         <tbody>
             @for ($i = 0; $i < count($slicedDataAlert); $i++) <tr>
                 @foreach ($slicedDataAlert[$i] as $item)
+                @if ($item == 'STOCK AMAN')
+                <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                @elseif ($item == 'ALERT')
+                <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                @else
                 <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                @endif
                 @endforeach
                 </tr>
                 @endfor
@@ -129,7 +129,14 @@
 
                 @for ($i = 0; $i < count($slicedDataAlert2); $i++) <tr>
                     @foreach ($slicedDataAlert2[$i] as $item)
+                    @if ($item == 'STOCK AMAN')
+                    <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                    </td>
+                    @elseif ($item == 'ALERT')
+                    <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                    @else
                     <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                    @endif
                     @endforeach
                     </tr>
                     @endfor
@@ -153,7 +160,15 @@
                     </tr>
                     @for ($i = 0; $i < count($slicedDataAlert3); $i++) <tr>
                         @foreach ($slicedDataAlert3[$i] as $item)
+                        @if ($item == 'STOCK AMAN')
+                        <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                        </td>
+                        @elseif ($item == 'ALERT')
+                        <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                        </td>
+                        @else
                         <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                        @endif
                         @endforeach
                         </tr>
                         @endfor
@@ -180,7 +195,15 @@
                         </tr>
                         @for ($i = 0; $i < count($slicedDataAlert4); $i++) <tr>
                             @foreach ($slicedDataAlert4[$i] as $item)
+                            @if ($item == 'STOCK AMAN')
+                            <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                $item }}</td>
+                            @elseif ($item == 'ALERT')
+                            <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                }}</td>
+                            @else
                             <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                            @endif
                             @endforeach
                             </tr>
                             @endfor
@@ -210,7 +233,15 @@
                             </tr>
                             @for ($i = 0; $i < count($slicedDataAlert5); $i++) <tr>
                                 @foreach ($slicedDataAlert5[$i] as $item)
+                                @if ($item == 'STOCK AMAN')
+                                <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                    $item }}</td>
+                                @elseif ($item == 'ALERT')
+                                <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                    $item }}</td>
+                                @else
                                 <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                                @endif
                                 @endforeach
                                 </tr>
                                 @endfor
@@ -243,7 +274,15 @@
                                 </tr>
                                 @for ($i = 0; $i < count($slicedDataAlert6); $i++) <tr>
                                     @foreach ($slicedDataAlert6[$i] as $item)
+                                    @if ($item == 'STOCK AMAN')
+                                    <td class="bg-success"
+                                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                                    @elseif ($item == 'ALERT')
+                                    <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">
+                                        {{ $item }}</td>
+                                    @else
                                     <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                                    @endif
                                     @endforeach
                                     </tr>
                                     @endfor
@@ -280,8 +319,18 @@
                                     </tr>
                                     @for ($i = 0; $i < count($slicedDataAlert7); $i++) <tr>
                                         @foreach ($slicedDataAlert7[$i] as $item)
+                                        @if ($item == 'STOCK AMAN')
+                                        <td class="bg-success"
+                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                                        </td>
+                                        @elseif ($item == 'ALERT')
+                                        <td class="bg-danger"
+                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                                        </td>
+                                        @else
                                         <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
                                         </td>
+                                        @endif
                                         @endforeach
                                         </tr>
                                         @endfor
@@ -322,9 +371,18 @@
                                         </tr>
                                         @for ($i = 0; $i < count($slicedDataAlert8); $i++) <tr>
                                             @foreach ($slicedDataAlert8[$i] as $item)
+                                            @if ($item == 'STOCK AMAN')
+                                            <td class="bg-success"
+                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                }}</td>
+                                            @elseif ($item == 'ALERT')
+                                            <td class="bg-danger"
+                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                }}</td>
+                                            @else
                                             <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                }}
-                                            </td>
+                                                }}</td>
+                                            @endif
                                             @endforeach
                                             </tr>
                                             @endfor
@@ -366,10 +424,18 @@
                                             </tr>
                                             @for ($i = 0; $i < count($slicedDataAlert9); $i++) <tr>
                                                 @foreach ($slicedDataAlert9[$i] as $item)
+                                                @if ($item == 'STOCK AMAN')
+                                                <td class="bg-success"
+                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                    $item }}</td>
+                                                @elseif ($item == 'ALERT')
+                                                <td class="bg-danger"
+                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                    $item }}</td>
+                                                @else
                                                 <td style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                    $item
-                                                    }}
-                                                </td>
+                                                    $item }}</td>
+                                                @endif
                                                 @endforeach
                                                 </tr>
                                                 @endfor
@@ -412,10 +478,18 @@
                                                 </tr>
                                                 @for ($i = 0; $i < count($slicedDataAlert10); $i++) <tr>
                                                     @foreach ($slicedDataAlert10[$i] as $item)
+                                                    @if ($item == 'STOCK AMAN')
+                                                    <td class="bg-success"
+                                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                        $item }}</td>
+                                                    @elseif ($item == 'ALERT')
+                                                    <td class="bg-danger"
+                                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                        $item }}</td>
+                                                    @else
                                                     <td style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                        $item
-                                                        }}
-                                                    </td>
+                                                        $item }}</td>
+                                                    @endif
                                                     @endforeach
                                                     </tr>
                                                     @endfor
@@ -459,12 +533,19 @@
                                                     </tr>
                                                     @for ($i = 0; $i < count($slicedDataAlert11); $i++) <tr>
                                                         @foreach ($slicedDataAlert11[$i] as $item)
+                                                        @if ($item == 'STOCK AMAN')
+                                                        <td class="bg-success"
+                                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                                            {{ $item }}</td>
+                                                        @elseif ($item == 'ALERT')
+                                                        <td class="bg-danger"
+                                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                                            {{ $item }}</td>
+                                                        @else
                                                         <td
                                                             style="vertical-align : middle;text-align:center; padding:0;">
-                                                            {{
-                                                            $item
-                                                            }}
-                                                        </td>
+                                                            {{ $item }}</td>
+                                                        @endif
                                                         @endforeach
                                                         </tr>
                                                         @endfor
@@ -508,12 +589,19 @@
                                                         </tr>
                                                         @for ($i = 0; $i < count($slicedDataAlert12); $i++) <tr>
                                                             @foreach ($slicedDataAlert12[$i] as $item)
+                                                            @if ($item == 'STOCK AMAN')
+                                                            <td class="bg-success"
+                                                                style="vertical-align : middle;text-align:center; padding:0;">
+                                                                {{ $item }}</td>
+                                                            @elseif ($item == 'ALERT')
+                                                            <td class="bg-danger"
+                                                                style="vertical-align : middle;text-align:center; padding:0;">
+                                                                {{ $item }}</td>
+                                                            @else
                                                             <td
                                                                 style="vertical-align : middle;text-align:center; padding:0;">
-                                                                {{
-                                                                $item
-                                                                }}
-                                                            </td>
+                                                                {{ $item }}</td>
+                                                            @endif
                                                             @endforeach
                                                             </tr>
                                                             @endfor
@@ -557,12 +645,19 @@
                                                             </tr>
                                                             @for ($i = 0; $i < count($slicedDataAlert13); $i++) <tr>
                                                                 @foreach ($slicedDataAlert13[$i] as $item)
+                                                                @if ($item == 'STOCK AMAN')
+                                                                <td class="bg-success"
+                                                                    style="vertical-align : middle;text-align:center; padding:0;">
+                                                                    {{ $item }}</td>
+                                                                @elseif ($item == 'ALERT')
+                                                                <td class="bg-danger"
+                                                                    style="vertical-align : middle;text-align:center; padding:0;">
+                                                                    {{ $item }}</td>
+                                                                @else
                                                                 <td
                                                                     style="vertical-align : middle;text-align:center; padding:0;">
-                                                                    {{
-                                                                    $item
-                                                                    }}
-                                                                </td>
+                                                                    {{ $item }}</td>
+                                                                @endif
                                                                 @endforeach
                                                                 </tr>
                                                                 @endfor
@@ -606,12 +701,19 @@
                                                                 </tr>
                                                                 @for ($i = 0; $i < count($slicedDataAlert14); $i++) <tr>
                                                                     @foreach ($slicedDataAlert14[$i] as $item)
+                                                                    @if ($item == 'STOCK AMAN')
+                                                                    <td class="bg-success"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">
+                                                                        {{ $item }}</td>
+                                                                    @elseif ($item == 'ALERT')
+                                                                    <td class="bg-danger"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">
+                                                                        {{ $item }}</td>
+                                                                    @else
                                                                     <td
                                                                         style="vertical-align : middle;text-align:center; padding:0;">
-                                                                        {{
-                                                                        $item
-                                                                        }}
-                                                                    </td>
+                                                                        {{ $item }}</td>
+                                                                    @endif
                                                                     @endforeach
                                                                     </tr>
                                                                     @endfor
