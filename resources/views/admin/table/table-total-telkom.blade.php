@@ -20,26 +20,29 @@
                 <th class="text-center ont-main-text bg-success" colspan="6">ONT PREMIUM</th>
                 <th class="text-center ont-main-text bg-warning" colspan="6">ONT DB</th>
                 <th class="text-center ont-main-text cell-2" colspan="3">ONT SB</th>
-                <th class="text-center ont-main-text bg-info" style="vertical-align : middle;text-align:center;"
-                    rowspan="3">TOTAL ONT</th>
+                <th class="text-center ont-main-text bg-info"
+                    style="vertical-align : middle;text-align:center; padding:0;" rowspan="3">TOTAL ONT</th>
                 <th class="text-center ont-main-text column1" colspan="4">STB</th>
-                <th class="text-center ont-main-text bg-info" style="vertical-align : middle;text-align:center;"
-                    rowspan="3">TOTAL STB</th>
+                <th class="text-center ont-main-text bg-info"
+                    style="vertical-align : middle;text-align:center; padding:0;" rowspan="3">TOTAL STB</th>
             </tr>
 
             <tr>
                 <th class="text-center ont-main-text bg-success" colspan="2">ZTE</th>
                 <th class="text-center ont-main-text bg-success" colspan="2">HUAWEI</th>
                 <th class="text-center ont-main-text bg-success">FH</th>
-                <th class="text-center ont-main-text bg-success" rowspan="2">TOTAL ONT PREMIUM</th>
+                <th class="text-center ont-main-text bg-success" style="padding: 0; vertical-align:middle;" rowspan="2">
+                    TOTAL ONT PREMIUM</th>
                 <th class="text-center ont-main-text bg-warning">ZTE</th>
                 <th class="text-center ont-main-text bg-warning">HUAWEI</th>
                 <th class="text-center ont-main-text bg-warning" colspan="2">FH</th>
                 <th class="text-center ont-main-text bg-warning">NOKIA</th>
-                <th class="text-center ont-main-text bg-warning" rowspan="2">TOTAL ONT DB</th>
+                <th class="text-center ont-main-text bg-warning" style="padding: 0; vertical-align:middle;" rowspan="2">
+                    TOTAL ONT DB</th>
                 <th class="text-center ont-main-text cell-2">ZTE</th>
                 <th class="text-center ont-main-text cell-2">HUAWEI</th>
-                <th class="text-center ont-main-text cell-2" rowspan="2">TOTAL SB</th>
+                <th class="text-center ont-main-text cell-2" style="padding: 0; vertical-align:middle;" rowspan="2">
+                    TOTAL SB</th>
                 <th class="text-center ont-main-text column1" colspan="2">FH</th>
                 <th class="text-center ont-main-text column1" colspan="2">ZTE</th>
             </tr>

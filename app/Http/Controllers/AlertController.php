@@ -33,6 +33,7 @@ class AlertController extends Controller
         $slicedDataPsbTotal = array_slice($dataPsb, 13, 1);
         $slicedDataAlert = array_slice($dataAlert, 0, 5);
         $slicedDataAlert2 = array_slice($dataAlert, 6, 5);
+        // dd($slicedDataAlert2);
         $slicedDataAlert3 = array_slice($dataAlert, 12, 8);
         $slicedDataAlert4 = array_slice($dataAlert, 21, 9);
         $slicedDataAlert5 = array_slice($dataAlert, 31, 4);

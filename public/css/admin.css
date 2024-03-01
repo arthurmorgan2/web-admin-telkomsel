@@ -80,7 +80,7 @@
 }
 
 .ont-text {
-    font-size: 9px;
+    font-size: 7px;
 }
 /* Colouring Cells */
 /* Tabel NTE Telkomsel */
@@ -152,4 +152,8 @@ td {
     border: 1px solid #000000;
     text-align: center;
     padding: 8px;
+}
+
+.content-wrapper {
+    overflow: hidden;
 }

@@ -42,7 +42,7 @@
                 <th class="text-center bg-info" style="vertical-align : middle;text-align:center; padding:0;">
                     GAP KBTHN (25 HR)</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;" colspan="2">
-                    KTRNGN PSB (STOCK DAYS 14 HR)</th>
+                    KTRNGN PSB (STOCK DAYS 20 HR)</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;" colspan="2">
                     STOCK SAAT INI REFURBISHED</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;" colspan="4">
@@ -97,30 +97,39 @@
         </thead>
         <tbody>
             @for ($i = 0; $i < count($slicedDataAlert); $i++) <tr>
-                @foreach ($slicedDataAlert[$i] as $item)
+                @foreach ($slicedDataAlert[$i] as $key => $item)
                 @if ($item == 'STOCK AMAN')
+                <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                @elseif ($item == 'AMAN')
                 <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                 @elseif ($item == 'ALERT')
                 <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                @elseif ($item == 'OVERLOAD')
+                <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                @elseif ($key == 'CAPACITY')
+                <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                 @else
                 <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                 @endif
                 @endforeach
                 </tr>
                 @endfor
-                <tr>
+                <tr class="column1">
                     @foreach ($slicedDataTotal[0] as $key => $item)
                     @if ($item == 'TOTAL STOCK WH SO DENPASAR')
-                    <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{ $item }}</td>
+                    <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{
+                        $item }}</td>
                     <td></td>
                     <td></td>
                     <td></td>
                     @elseif ($item == '')
                     <td style="display: none"></td>
                     @elseif ($item == 'KEBUTUHAN TAG WH SO')
-                    <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{ $item }}</td>
+                    <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{
+                        $item }}</td>
                     @elseif ($item == 'KEBUTHAN DONOR WITEL')
-                    <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{ $item }}</td>
+                    <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{
+                        $item }}</td>
                     @else
                     <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
                     @endif
@@ -128,19 +137,31 @@
                 </tr>
 
                 @for ($i = 0; $i < count($slicedDataAlert2); $i++) <tr>
-                    @foreach ($slicedDataAlert2[$i] as $item)
-                    @if ($item == 'STOCK AMAN')
-                    <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                    @foreach ($slicedDataAlert2[$i] as $key => $item)
+                    @if ($item === 'STOCK AMAN')
+                    <td class="bg-success" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
+                    </td>
+                    @elseif ($item == 'AMAN')
+                    <td class="bg-success" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
                     </td>
                     @elseif ($item == 'ALERT')
-                    <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                    <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
+                    </td>
+                    @elseif ($item == 'OVERLOAD')
+                    <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
+                    </td>
+                    @elseif ($key == 'CAPACITY')
+                    <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                    @elseif ($i === 0)
+                    <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
+                    </td>
                     @else
-                    <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                    <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
                     @endif
                     @endforeach
                     </tr>
                     @endfor
-                    <tr>
+                    <tr class="column1">
                         @foreach ($slicedDataTotal2[0] as $key => $item)
                         @if ($item == 'TOTAL STOCK WH SO SINGARAJA')
                         <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{ $item }}</td>
@@ -159,12 +180,24 @@
                         @endforeach
                     </tr>
                     @for ($i = 0; $i < count($slicedDataAlert3); $i++) <tr>
-                        @foreach ($slicedDataAlert3[$i] as $item)
+                        @foreach ($slicedDataAlert3[$i] as $key => $item)
                         @if ($item == 'STOCK AMAN')
+                        <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                        </td>
+                        @elseif ($item == 'AMAN')
                         <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
                         </td>
                         @elseif ($item == 'ALERT')
                         <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                        </td>
+                        @elseif ($item == 'OVERLOAD')
+                        <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                        </td>
+                        @elseif ($key == 'CAPACITY')
+                        <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                        </td>
+                        @elseif ($i === 0)
+                        <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
                         </td>
                         @else
                         <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
@@ -172,7 +205,7 @@
                         @endforeach
                         </tr>
                         @endfor
-                        <tr>
+                        <tr class="column1">
                             @foreach ($slicedDataTotal3[0] as $key => $item)
                             @if ($item == 'TOTAL STOCK WH SO MADIUN')
                             <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{ $item }}
@@ -194,20 +227,33 @@
                             @endforeach
                         </tr>
                         @for ($i = 0; $i < count($slicedDataAlert4); $i++) <tr>
-                            @foreach ($slicedDataAlert4[$i] as $item)
+                            @foreach ($slicedDataAlert4[$i] as $key => $item)
                             @if ($item == 'STOCK AMAN')
+                            <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                $item }}</td>
+                            @elseif ($item == 'AMAN')
                             <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{
                                 $item }}</td>
                             @elseif ($item == 'ALERT')
                             <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                 }}</td>
+                            @elseif ($item == 'OVERLOAD')
+                            <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                }}</td>
+                            @elseif ($key == 'CAPACITY')
+                            <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                }}</td>
+                            @elseif ($i === 0)
+                            <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item
+                                }}
+                            </td>
                             @else
                             <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                             @endif
                             @endforeach
                             </tr>
                             @endfor
-                            <tr>
+                            <tr class="column1">
                                 @foreach ($slicedDataTotal4[0] as $key => $item)
                                 @if ($item == 'TOTAL STOCK WH SO MALANG')
                                 <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{ $item
@@ -232,20 +278,33 @@
                                 @endforeach
                             </tr>
                             @for ($i = 0; $i < count($slicedDataAlert5); $i++) <tr>
-                                @foreach ($slicedDataAlert5[$i] as $item)
+                                @foreach ($slicedDataAlert5[$i] as $key => $item)
                                 @if ($item == 'STOCK AMAN')
+                                <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                    $item }}</td>
+                                @elseif ($item == 'AMAN')
                                 <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{
                                     $item }}</td>
                                 @elseif ($item == 'ALERT')
                                 <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{
                                     $item }}</td>
+                                @elseif ($item == 'OVERLOAD')
+                                <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                    $item }}</td>
+                                @elseif ($key == 'CAPACITY')
+                                <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                    $item }}</td>
+                                @elseif ($i === 0)
+                                <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                    $item }}
+                                </td>
                                 @else
                                 <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                                 @endif
                                 @endforeach
                                 </tr>
                                 @endfor
-                                <tr>
+                                <tr class="column1">
                                     @foreach ($slicedDataTotal5[0] as $key => $item)
                                     @if ($item == 'TOTAL STOCK WH SO PASURUAN')
                                     <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{
@@ -273,20 +332,33 @@
                                     @endforeach
                                 </tr>
                                 @for ($i = 0; $i < count($slicedDataAlert6); $i++) <tr>
-                                    @foreach ($slicedDataAlert6[$i] as $item)
+                                    @foreach ($slicedDataAlert6[$i] as $key => $item)
                                     @if ($item == 'STOCK AMAN')
+                                    <td class="bg-success"
+                                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                                    @elseif ($item == 'AMAN')
                                     <td class="bg-success"
                                         style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                                     @elseif ($item == 'ALERT')
                                     <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">
                                         {{ $item }}</td>
+                                    @elseif ($item == 'OVERLOAD')
+                                    <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">
+                                        {{ $item }}</td>
+                                    @elseif ($key == 'CAPACITY')
+                                    <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                        $item }}</td>
+                                    @elseif ($i === 0)
+                                    <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                                        {{ $item }}
+                                    </td>
                                     @else
                                     <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                                     @endif
                                     @endforeach
                                     </tr>
                                     @endfor
-                                    <tr>
+                                    <tr class="column1">
                                         @foreach ($slicedDataTotal6[0] as $key => $item)
                                         @if ($item == 'TOTAL STOCK WH SO SBS')
                                         <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">
@@ -318,14 +390,30 @@
                                         @endforeach
                                     </tr>
                                     @for ($i = 0; $i < count($slicedDataAlert7); $i++) <tr>
-                                        @foreach ($slicedDataAlert7[$i] as $item)
+                                        @foreach ($slicedDataAlert7[$i] as $key => $item)
                                         @if ($item == 'STOCK AMAN')
+                                        <td class="bg-success"
+                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                                        </td>
+                                        @elseif ($item == 'AMAN')
                                         <td class="bg-success"
                                             style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
                                         </td>
                                         @elseif ($item == 'ALERT')
                                         <td class="bg-danger"
                                             style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                                        </td>
+                                        @elseif ($item == 'OVERLOAD')
+                                        <td class="bg-danger"
+                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                                        </td>
+                                        @elseif ($key == 'CAPACITY')
+                                        <td class="column1"
+                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
+                                        </td>
+                                        @elseif ($i === 0)
+                                        <td class="cell-2"
+                                            style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
                                         </td>
                                         @else
                                         <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
@@ -334,7 +422,7 @@
                                         @endforeach
                                         </tr>
                                         @endfor
-                                        <tr>
+                                        <tr class="column1">
                                             @foreach ($slicedDataTotal7[0] as $key => $item)
                                             @if ($item == 'TOTAL STOCK WH SO KEDIRI')
                                             <td style="vertical-align: middle; text-align: center; padding: 0;"
@@ -370,8 +458,12 @@
                                             @endforeach
                                         </tr>
                                         @for ($i = 0; $i < count($slicedDataAlert8); $i++) <tr>
-                                            @foreach ($slicedDataAlert8[$i] as $item)
+                                            @foreach ($slicedDataAlert8[$i] as $key => $item)
                                             @if ($item == 'STOCK AMAN')
+                                            <td class="bg-success"
+                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                }}</td>
+                                            @elseif ($item == 'AMAN')
                                             <td class="bg-success"
                                                 style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                 }}</td>
@@ -379,6 +471,19 @@
                                             <td class="bg-danger"
                                                 style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                 }}</td>
+                                            @elseif ($item == 'OVERLOAD')
+                                            <td class="bg-danger"
+                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                }}</td>
+                                            @elseif ($key == 'CAPACITY')
+                                            <td class="column1"
+                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                }}</td>
+                                            @elseif ($i === 0)
+                                            <td class="cell-2"
+                                                style="vertical-align: middle; text-align: center; padding: 0;">{{ $item
+                                                }}
+                                            </td>
                                             @else
                                             <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                 }}</td>
@@ -386,7 +491,7 @@
                                             @endforeach
                                             </tr>
                                             @endfor
-                                            <tr>
+                                            <tr class="column1">
                                                 @foreach ($slicedDataTotal8[0] as $key => $item)
                                                 @if ($item == 'TOTAL STOCK WH SO SIDOARJO')
                                                 <td style="vertical-align: middle; text-align: center; padding: 0;"
@@ -423,8 +528,12 @@
                                                 @endforeach
                                             </tr>
                                             @for ($i = 0; $i < count($slicedDataAlert9); $i++) <tr>
-                                                @foreach ($slicedDataAlert9[$i] as $item)
+                                                @foreach ($slicedDataAlert9[$i] as $key => $item)
                                                 @if ($item == 'STOCK AMAN')
+                                                <td class="bg-success"
+                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                    $item }}</td>
+                                                @elseif ($item == 'AMAN')
                                                 <td class="bg-success"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{
                                                     $item }}</td>
@@ -432,6 +541,19 @@
                                                 <td class="bg-danger"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{
                                                     $item }}</td>
+                                                @elseif ($item == 'OVERLOAD')
+                                                <td class="bg-danger"
+                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                    $item }}</td>
+                                                @elseif ($key == 'CAPACITY')
+                                                <td class="column1"
+                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                    $item }}</td>
+                                                @elseif ($i === 0)
+                                                <td class="cell-2"
+                                                    style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                    $item }}
+                                                </td>
                                                 @else
                                                 <td style="vertical-align : middle;text-align:center; padding:0;">{{
                                                     $item }}</td>
@@ -439,7 +561,7 @@
                                                 @endforeach
                                                 </tr>
                                                 @endfor
-                                                <tr>
+                                                <tr class="column1">
                                                     @foreach ($slicedDataTotal9[0] as $key => $item)
                                                     @if ($item == 'TOTAL STOCK WH SO JEMBER')
                                                     <td style="vertical-align: middle; text-align: center; padding: 0;"
@@ -477,8 +599,12 @@
                                                     @endforeach
                                                 </tr>
                                                 @for ($i = 0; $i < count($slicedDataAlert10); $i++) <tr>
-                                                    @foreach ($slicedDataAlert10[$i] as $item)
+                                                    @foreach ($slicedDataAlert10[$i] as $key => $item)
                                                     @if ($item == 'STOCK AMAN')
+                                                    <td class="bg-success"
+                                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                        $item }}</td>
+                                                    @elseif ($item == 'AMAN')
                                                     <td class="bg-success"
                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
                                                         $item }}</td>
@@ -486,6 +612,19 @@
                                                     <td class="bg-danger"
                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
                                                         $item }}</td>
+                                                    @elseif ($item == 'OVERLOAD')
+                                                    <td class="bg-danger"
+                                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                        $item }}</td>
+                                                    @elseif ($key == 'CAPACITY')
+                                                    <td class="column1"
+                                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                        $item }}</td>
+                                                    @elseif ($i === 0)
+                                                    <td class="cell-2"
+                                                        style="vertical-align: middle; text-align: center; padding: 0;">
+                                                        {{ $item }}
+                                                    </td>
                                                     @else
                                                     <td style="vertical-align : middle;text-align:center; padding:0;">{{
                                                         $item }}</td>
@@ -493,7 +632,7 @@
                                                     @endforeach
                                                     </tr>
                                                     @endfor
-                                                    <tr>
+                                                    <tr class="column1">
                                                         @foreach ($slicedDataTotal10[0] as $key => $item)
                                                         @if ($item == 'TOTAL STOCK WH SO MADURA')
                                                         <td style="vertical-align: middle; text-align: center; padding: 0;"
@@ -532,8 +671,12 @@
                                                         @endforeach
                                                     </tr>
                                                     @for ($i = 0; $i < count($slicedDataAlert11); $i++) <tr>
-                                                        @foreach ($slicedDataAlert11[$i] as $item)
+                                                        @foreach ($slicedDataAlert11[$i] as $key => $item)
                                                         @if ($item == 'STOCK AMAN')
+                                                        <td class="bg-success"
+                                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                                            {{ $item }}</td>
+                                                        @elseif ($item == 'AMAN')
                                                         <td class="bg-success"
                                                             style="vertical-align : middle;text-align:center; padding:0;">
                                                             {{ $item }}</td>
@@ -541,6 +684,19 @@
                                                         <td class="bg-danger"
                                                             style="vertical-align : middle;text-align:center; padding:0;">
                                                             {{ $item }}</td>
+                                                        @elseif ($item == 'OVERLOAD')
+                                                        <td class="bg-danger"
+                                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                                            {{ $item }}</td>
+                                                        @elseif ($key == 'CAPACITY')
+                                                        <td class="column1"
+                                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                                            {{ $item }}</td>
+                                                        @elseif ($i === 0)
+                                                        <td class="cell-2"
+                                                            style="vertical-align: middle; text-align: center; padding: 0;">
+                                                            {{ $item }}
+                                                        </td>
                                                         @else
                                                         <td
                                                             style="vertical-align : middle;text-align:center; padding:0;">
@@ -549,7 +705,7 @@
                                                         @endforeach
                                                         </tr>
                                                         @endfor
-                                                        <tr>
+                                                        <tr class="column1">
                                                             @foreach ($slicedDataTotal11[0] as $key => $item)
                                                             @if ($item == 'TOTAL STOCK WH SO MATARAM')
                                                             <td style="vertical-align: middle; text-align: center; padding: 0;"
@@ -588,8 +744,12 @@
                                                             @endforeach
                                                         </tr>
                                                         @for ($i = 0; $i < count($slicedDataAlert12); $i++) <tr>
-                                                            @foreach ($slicedDataAlert12[$i] as $item)
+                                                            @foreach ($slicedDataAlert12[$i] as $key => $item)
                                                             @if ($item == 'STOCK AMAN')
+                                                            <td class="bg-success"
+                                                                style="vertical-align : middle;text-align:center; padding:0;">
+                                                                {{ $item }}</td>
+                                                            @elseif ($item == 'AMAN')
                                                             <td class="bg-success"
                                                                 style="vertical-align : middle;text-align:center; padding:0;">
                                                                 {{ $item }}</td>
@@ -597,6 +757,19 @@
                                                             <td class="bg-danger"
                                                                 style="vertical-align : middle;text-align:center; padding:0;">
                                                                 {{ $item }}</td>
+                                                            @elseif ($item == 'OVERLOAD')
+                                                            <td class="bg-danger"
+                                                                style="vertical-align : middle;text-align:center; padding:0;">
+                                                                {{ $item }}</td>
+                                                            @elseif ($key == 'CAPACITY')
+                                                            <td class="column1"
+                                                                style="vertical-align : middle;text-align:center; padding:0;">
+                                                                {{ $item }}</td>
+                                                            @elseif ($i === 0)
+                                                            <td class="cell-2"
+                                                                style="vertical-align: middle; text-align: center; padding: 0;">
+                                                                {{ $item }}
+                                                            </td>
                                                             @else
                                                             <td
                                                                 style="vertical-align : middle;text-align:center; padding:0;">
@@ -605,7 +778,7 @@
                                                             @endforeach
                                                             </tr>
                                                             @endfor
-                                                            <tr>
+                                                            <tr class="column1">
                                                                 @foreach ($slicedDataTotal12[0] as $key => $item)
                                                                 @if ($item == 'TOTAL STOCK WH SO KUPANG')
                                                                 <td style="vertical-align: middle; text-align: center; padding: 0;"
@@ -644,8 +817,12 @@
                                                                 @endforeach
                                                             </tr>
                                                             @for ($i = 0; $i < count($slicedDataAlert13); $i++) <tr>
-                                                                @foreach ($slicedDataAlert13[$i] as $item)
+                                                                @foreach ($slicedDataAlert13[$i] as $key => $item)
                                                                 @if ($item == 'STOCK AMAN')
+                                                                <td class="bg-success"
+                                                                    style="vertical-align : middle;text-align:center; padding:0;">
+                                                                    {{ $item }}</td>
+                                                                @elseif ($item == 'AMAN')
                                                                 <td class="bg-success"
                                                                     style="vertical-align : middle;text-align:center; padding:0;">
                                                                     {{ $item }}</td>
@@ -653,6 +830,19 @@
                                                                 <td class="bg-danger"
                                                                     style="vertical-align : middle;text-align:center; padding:0;">
                                                                     {{ $item }}</td>
+                                                                @elseif ($item == 'OVERLOAD')
+                                                                <td class="bg-danger"
+                                                                    style="vertical-align : middle;text-align:center; padding:0;">
+                                                                    {{ $item }}</td>
+                                                                @elseif ($key == 'CAPACITY')
+                                                                <td class="column1"
+                                                                    style="vertical-align : middle;text-align:center; padding:0;">
+                                                                    {{ $item }}</td>
+                                                                @elseif ($i === 0)
+                                                                <td class="cell-2"
+                                                                    style="vertical-align: middle; text-align: center; padding: 0;">
+                                                                    {{ $item }}
+                                                                </td>
                                                                 @else
                                                                 <td
                                                                     style="vertical-align : middle;text-align:center; padding:0;">
@@ -661,7 +851,7 @@
                                                                 @endforeach
                                                                 </tr>
                                                                 @endfor
-                                                                <tr>
+                                                                <tr class="column1">
                                                                     @foreach ($slicedDataTotal13[0] as $key => $item)
                                                                     @if ($item == 'TOTAL STOCK WH SO SBU')
                                                                     <td style="vertical-align: middle; text-align: center; padding: 0;"
@@ -700,24 +890,14 @@
                                                                     @endforeach
                                                                 </tr>
                                                                 @for ($i = 0; $i < count($slicedDataAlert14); $i++) <tr>
-                                                                    @foreach ($slicedDataAlert14[$i] as $item)
-                                                                    @if ($item == 'STOCK AMAN')
-                                                                    <td class="bg-success"
+                                                                    @foreach ($slicedDataAlert14[$i] as $key => $item)
+                                                                    <td class="cell-2"
                                                                         style="vertical-align : middle;text-align:center; padding:0;">
                                                                         {{ $item }}</td>
-                                                                    @elseif ($item == 'ALERT')
-                                                                    <td class="bg-danger"
-                                                                        style="vertical-align : middle;text-align:center; padding:0;">
-                                                                        {{ $item }}</td>
-                                                                    @else
-                                                                    <td
-                                                                        style="vertical-align : middle;text-align:center; padding:0;">
-                                                                        {{ $item }}</td>
-                                                                    @endif
                                                                     @endforeach
                                                                     </tr>
                                                                     @endfor
-                                                                    <tr>
+                                                                    <tr class="column2">
                                                                         @foreach ($slicedDataTotal14[0] as $key =>
                                                                         $item)
                                                                         @if ($item == 'TOTAL')
