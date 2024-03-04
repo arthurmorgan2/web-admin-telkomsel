@@ -75,7 +75,7 @@
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">PS HRAN STB</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">ONT</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">STB</th>
-                <th class="text-center column1" style="vertical-align : middle;text-align:center;">DAYS AWAL</th>
+                <th class="text-center column1" style="vertical-align : middle;text-align:center;">ONT</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">STB</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">ONT</th>
                 <th class="text-center column1" style="vertical-align : middle;text-align:center;">STB</th>
