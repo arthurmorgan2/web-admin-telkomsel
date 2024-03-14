@@ -96,8 +96,15 @@
             </tr>
         </thead>
         <tbody>
+
             @for ($i = 0; $i < count($slicedDataAlert); $i++) <tr>
                 @foreach ($slicedDataAlert[$i] as $key => $item)
+                @php
+                $decimalValue = false;
+                if (is_numeric($item) && floor($item) != $item) {
+                $decimalValue = true;
+                }
+                @endphp
                 @if ($item == 'STOCK AMAN')
                 <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                 @elseif ($item == 'AMAN')
@@ -108,97 +115,14 @@
                 <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                 @elseif ($key == 'CAPACITY')
                 <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
-                @else
-                <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
-                @endif
-                @endforeach
-                </tr>
-                @endfor
-                <tr class="column1">
-                    @foreach ($slicedDataTotal[0] as $key => $item)
-                    @if ($item == 'TOTAL STOCK WH SO DENPASAR')
-                    <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{
-                        $item }}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    @elseif ($item == '')
-                    <td style="display: none"></td>
-                    @elseif ($item == 'KEBUTUHAN TAG WH SO')
-                    <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{
-                        $item }}</td>
-                    @elseif ($item == 'KEBUTHAN DONOR WITEL')
-                    <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{
-                        $item }}</td>
-                    @else
-                    <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
-                    @endif
-                    @endforeach
-                </tr>
+                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' || $key=='ONT1' ||
+                $key=='ONT4'))
+                <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
+                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                    style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
 
-                @for ($i = 0; $i < count($slicedDataAlert2); $i++) <tr>
-                    @foreach ($slicedDataAlert2[$i] as $key => $item)
-                    @if ($item === 'STOCK AMAN')
-                    <td class="bg-success" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
-                    </td>
-                    @elseif ($item == 'AMAN')
-                    <td class="bg-success" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
-                    </td>
-                    @elseif ($item == 'ALERT')
-                    <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
-                    </td>
-                    @elseif ($item == 'OVERLOAD')
-                    <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
-                    </td>
-                    @elseif ($key == 'CAPACITY')
-                    <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
-                    @elseif ($i === 0)
-                    <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
-                    </td>
-                    @else
-                    <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
-                    @endif
-                    @endforeach
-                    </tr>
-                    @endfor
-                    <tr class="column1">
-                        @foreach ($slicedDataTotal2[0] as $key => $item)
-                        @if ($item == 'TOTAL STOCK WH SO SINGARAJA')
-                        <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{ $item }}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        @elseif ($item == '')
-                        <td style="display: none"></td>
-                        @elseif ($item == 'KEBUTUHAN TAG WH SO')
-                        <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{ $item }}</td>
-                        @elseif ($item == 'KEBUTHAN DONOR WITEL')
-                        <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{ $item }}</td>
-                        @else
-                        <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
-                        @endif
-                        @endforeach
-                    </tr>
-                    @for ($i = 0; $i < count($slicedDataAlert3); $i++) <tr>
-                        @foreach ($slicedDataAlert3[$i] as $key => $item)
-                        @if ($item == 'STOCK AMAN')
-                        <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
-                        </td>
-                        @elseif ($item == 'AMAN')
-                        <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
-                        </td>
-                        @elseif ($item == 'ALERT')
-                        <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
-                        </td>
-                        @elseif ($item == 'OVERLOAD')
-                        <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
-                        </td>
-                        @elseif ($key == 'CAPACITY')
-                        <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
-                        </td>
-                        @elseif ($i === 0)
-                        <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
-                        </td>
                         @else
                         <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                         @endif
@@ -206,56 +130,106 @@
                         </tr>
                         @endfor
                         <tr class="column1">
-                            @foreach ($slicedDataTotal3[0] as $key => $item)
-                            @if ($item == 'TOTAL STOCK WH SO MADIUN')
-                            <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{ $item }}
-                            </td>
+                            @foreach ($slicedDataTotal[0] as $key => $item)
+                            @php
+                            $decimalValue = false;
+                            if (is_numeric($item) && floor($item) != $item) {
+                            $decimalValue = true;
+                            }
+                            @endphp
+                            @if ($item == 'TOTAL STOCK WH SO DENPASAR')
+                            <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{
+                                $item }}</td>
                             <td></td>
                             <td></td>
                             <td></td>
                             @elseif ($item == '')
                             <td style="display: none"></td>
                             @elseif ($item == 'KEBUTUHAN TAG WH SO')
-                            <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{ $item }}
-                            </td>
+                            <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{
+                                $item }}</td>
                             @elseif ($item == 'KEBUTHAN DONOR WITEL')
-                            <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{ $item }}
-                            </td>
-                            @else
-                            <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
-                            @endif
-                            @endforeach
+                            <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{
+                                $item }}</td>
+                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                            $key=='ONT1' || $key=='ONT4'))
+                            <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                $item }}</td>
+                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td
+                                class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                }}</td>
+                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td
+                                    class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                    $item }}</td>
+
+                                    @else
+                                    <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
+                                    @endif
+                                    @endforeach
                         </tr>
-                        @for ($i = 0; $i < count($slicedDataAlert4); $i++) <tr>
-                            @foreach ($slicedDataAlert4[$i] as $key => $item)
-                            @if ($item == 'STOCK AMAN')
-                            <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{
-                                $item }}</td>
+
+                        @for ($i = 0; $i < count($slicedDataAlert2); $i++) <tr>
+                            @foreach ($slicedDataAlert2[$i] as $key => $item)
+                            @php
+                            $decimalValue = false;
+                            if (is_numeric($item) && floor($item) != $item) {
+                            $decimalValue = true;
+                            }
+                            @endphp
+                            @if ($item === 'STOCK AMAN')
+                            <td class="bg-success" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                $item
+                                }}
+                            </td>
                             @elseif ($item == 'AMAN')
-                            <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{
-                                $item }}</td>
+                            <td class="bg-success" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                $item
+                                }}
+                            </td>
                             @elseif ($item == 'ALERT')
-                            <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                }}</td>
+                            <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                $item
+                                }}
+                            </td>
                             @elseif ($item == 'OVERLOAD')
-                            <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                }}</td>
+                            <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                $item
+                                }}
+                            </td>
                             @elseif ($key == 'CAPACITY')
                             <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                }}</td>
+                                }}
+                            </td>
                             @elseif ($i === 0)
                             <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item
                                 }}
                             </td>
+                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                            $key=='ONT1' || $key=='ONT4'))
+                            <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                $item }}</td>
+                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                }}</td>
+                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                    style="vertical-align : middle;text-align:center; padding:0;">{{
+                                    $item }}</td>
+
                             @else
-                            <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                            <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
                             @endif
                             @endforeach
                             </tr>
                             @endfor
                             <tr class="column1">
-                                @foreach ($slicedDataTotal4[0] as $key => $item)
-                                @if ($item == 'TOTAL STOCK WH SO MALANG')
+                                @foreach ($slicedDataTotal2[0] as $key => $item)
+                                @php
+                                $decimalValue = false;
+                                if (is_numeric($item) && floor($item) != $item) {
+                                $decimalValue = true;
+                                }
+                                @endphp
+                                @if ($item == 'TOTAL STOCK WH SO SINGARAJA')
                                 <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{ $item
                                     }}
                                 </td>
@@ -272,32 +246,68 @@
                                 <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{ $item
                                     }}
                                 </td>
+                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                $key=='ONT1' || $key=='ONT4'))
+                                <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                    $item }}</td>
+                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                    style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                    }}</td>
+                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                        $item }}</td>
                                 @else
                                 <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
                                 @endif
                                 @endforeach
                             </tr>
-                            @for ($i = 0; $i < count($slicedDataAlert5); $i++) <tr>
-                                @foreach ($slicedDataAlert5[$i] as $key => $item)
+                            @for ($i = 0; $i < count($slicedDataAlert3); $i++) <tr>
+                                @foreach ($slicedDataAlert3[$i] as $key => $item)
+                                @php
+                                $decimalValue = false;
+                                if (is_numeric($item) && floor($item) != $item) {
+                                $decimalValue = true;
+                                }
+                                @endphp
                                 @if ($item == 'STOCK AMAN')
                                 <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{
-                                    $item }}</td>
-                                @elseif ($item == 'AMAN')
-                                <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{
-                                    $item }}</td>
-                                @elseif ($item == 'ALERT')
-                                <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{
-                                    $item }}</td>
-                                @elseif ($item == 'OVERLOAD')
-                                <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{
-                                    $item }}</td>
-                                @elseif ($key == 'CAPACITY')
-                                <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{
-                                    $item }}</td>
-                                @elseif ($i === 0)
-                                <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">{{
                                     $item }}
                                 </td>
+                                @elseif ($item == 'AMAN')
+                                <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                    $item }}
+                                </td>
+                                @elseif ($item == 'ALERT')
+                                <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                    $item
+                                    }}
+                                </td>
+                                @elseif ($item == 'OVERLOAD')
+                                <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                    $item
+                                    }}
+                                </td>
+                                @elseif ($key == 'CAPACITY')
+                                <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{
+                                    $item
+                                    }}
+                                </td>
+                                @elseif ($i === 0)
+                                <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                    $item
+                                    }}
+                                </td>
+                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                $key=='ONT1' || $key=='ONT4'))
+                                <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                    $item }}</td>
+                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                    style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                    }}</td>
+                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                        $item }}</td>
+
                                 @else
                                 <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                                 @endif
@@ -305,8 +315,14 @@
                                 </tr>
                                 @endfor
                                 <tr class="column1">
-                                    @foreach ($slicedDataTotal5[0] as $key => $item)
-                                    @if ($item == 'TOTAL STOCK WH SO PASURUAN')
+                                    @foreach ($slicedDataTotal3[0] as $key => $item)
+                                    @php
+                                    $decimalValue = false;
+                                    if (is_numeric($item) && floor($item) != $item) {
+                                    $decimalValue = true;
+                                    }
+                                    @endphp
+                                    @if ($item == 'TOTAL STOCK WH SO MADIUN')
                                     <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{
                                         $item
                                         }}
@@ -326,32 +342,68 @@
                                         $item
                                         }}
                                     </td>
+                                    @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                    $key=='ONT1' || $key=='ONT4'))
+                                    <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                        $item }}</td>
+                                    @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                        }}</td>
+                                        @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                            style="vertical-align : middle;text-align:center; padding:0;">{{
+                                            $item }}</td>
                                     @else
                                     <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
                                     @endif
                                     @endforeach
                                 </tr>
-                                @for ($i = 0; $i < count($slicedDataAlert6); $i++) <tr>
-                                    @foreach ($slicedDataAlert6[$i] as $key => $item)
+                                @for ($i = 0; $i < count($slicedDataAlert4); $i++) <tr>
+                                    @foreach ($slicedDataAlert4[$i] as $key => $item)
+                                    @php
+                                    $decimalValue = false;
+                                    if (is_numeric($item) && floor($item) != $item) {
+                                    $decimalValue = true;
+                                    }
+                                    @endphp
                                     @if ($item == 'STOCK AMAN')
                                     <td class="bg-success"
-                                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                        $item }}</td>
                                     @elseif ($item == 'AMAN')
                                     <td class="bg-success"
-                                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
+                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                        $item }}</td>
                                     @elseif ($item == 'ALERT')
                                     <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">
-                                        {{ $item }}</td>
+                                        {{
+                                        $item
+                                        }}</td>
                                     @elseif ($item == 'OVERLOAD')
                                     <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">
-                                        {{ $item }}</td>
+                                        {{
+                                        $item
+                                        }}</td>
                                     @elseif ($key == 'CAPACITY')
                                     <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{
-                                        $item }}</td>
-                                    @elseif ($i === 0)
-                                    <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
-                                        {{ $item }}
-                                    </td>
+                                        $item
+                                        }}</td>
+                                        @elseif ($i === 0)
+                                        <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                                            {{
+                                            $item
+                                            }}
+                                        </td>
+                                        @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                        $key=='ONT1' || $key=='ONT4'))
+                                        <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                            $item }}</td>
+                                        @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                            }}</td>
+                                            @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                $item }}</td>
+
                                     @else
                                     <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                                     @endif
@@ -359,8 +411,14 @@
                                     </tr>
                                     @endfor
                                     <tr class="column1">
-                                        @foreach ($slicedDataTotal6[0] as $key => $item)
-                                        @if ($item == 'TOTAL STOCK WH SO SBS')
+                                        @foreach ($slicedDataTotal4[0] as $key => $item)
+                                        @php
+                                        $decimalValue = false;
+                                        if (is_numeric($item) && floor($item) != $item) {
+                                        $decimalValue = true;
+                                        }
+                                        @endphp
+                                        @if ($item == 'TOTAL STOCK WH SO MALANG')
                                         <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">
                                             {{
                                             $item
@@ -383,38 +441,68 @@
                                             $item
                                             }}
                                         </td>
+                                        @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                        $key=='ONT1' || $key=='ONT4'))
+                                        <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                            $item }}</td>
+                                        @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                            }}</td>
+                                            @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                $item }}</td>
                                         @else
                                         <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
                                         </td>
                                         @endif
                                         @endforeach
                                     </tr>
-                                    @for ($i = 0; $i < count($slicedDataAlert7); $i++) <tr>
-                                        @foreach ($slicedDataAlert7[$i] as $key => $item)
+                                    @for ($i = 0; $i < count($slicedDataAlert5); $i++) <tr>
+                                        @foreach ($slicedDataAlert5[$i] as $key => $item)
+                                        @php
+                                        $decimalValue = false;
+                                        if (is_numeric($item) && floor($item) != $item) {
+                                        $decimalValue = true;
+                                        }
+                                        @endphp
                                         @if ($item == 'STOCK AMAN')
                                         <td class="bg-success"
-                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
-                                        </td>
+                                            style="vertical-align : middle;text-align:center; padding:0;">{{
+                                            $item }}</td>
                                         @elseif ($item == 'AMAN')
                                         <td class="bg-success"
-                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
-                                        </td>
+                                            style="vertical-align : middle;text-align:center; padding:0;">{{
+                                            $item }}</td>
                                         @elseif ($item == 'ALERT')
                                         <td class="bg-danger"
-                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
-                                        </td>
+                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                            {{
+                                            $item }}</td>
                                         @elseif ($item == 'OVERLOAD')
                                         <td class="bg-danger"
-                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
-                                        </td>
+                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                            {{
+                                            $item }}</td>
                                         @elseif ($key == 'CAPACITY')
                                         <td class="column1"
-                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
-                                        </td>
-                                        @elseif ($i === 0)
-                                        <td class="cell-2"
-                                            style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}
-                                        </td>
+                                            style="vertical-align : middle;text-align:center; padding:0;">{{
+                                            $item }}</td>
+                                            @elseif ($i === 0)
+                                            <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                                                {{
+                                                $item }}
+                                            </td>
+                                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                            $key=='ONT1' || $key=='ONT4'))
+                                            <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                $item }}</td>
+                                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                }}</td>
+                                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                    $item }}</td>
+
                                         @else
                                         <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}
                                         </td>
@@ -423,8 +511,14 @@
                                         </tr>
                                         @endfor
                                         <tr class="column1">
-                                            @foreach ($slicedDataTotal7[0] as $key => $item)
-                                            @if ($item == 'TOTAL STOCK WH SO KEDIRI')
+                                            @foreach ($slicedDataTotal5[0] as $key => $item)
+                                            @php
+                                            $decimalValue = false;
+                                            if (is_numeric($item) && floor($item) != $item) {
+                                            $decimalValue = true;
+                                            }
+                                            @endphp
+                                            @if ($item == 'TOTAL STOCK WH SO PASURUAN')
                                             <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                 colspan="3">
                                                 {{
@@ -450,6 +544,16 @@
                                                 $item
                                                 }}
                                             </td>
+                                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                            $key=='ONT1' || $key=='ONT4'))
+                                            <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                $item }}</td>
+                                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                }}</td>
+                                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                    $item }}</td>
                                             @else
                                             <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item
                                                 }}
@@ -457,43 +561,68 @@
                                             @endif
                                             @endforeach
                                         </tr>
-                                        @for ($i = 0; $i < count($slicedDataAlert8); $i++) <tr>
-                                            @foreach ($slicedDataAlert8[$i] as $key => $item)
+                                        @for ($i = 0; $i < count($slicedDataAlert6); $i++) <tr>
+                                            @foreach ($slicedDataAlert6[$i] as $key => $item)
+                                            @php
+                                            $decimalValue = false;
+                                            if (is_numeric($item) && floor($item) != $item) {
+                                            $decimalValue = true;
+                                            }
+                                            @endphp
                                             @if ($item == 'STOCK AMAN')
                                             <td class="bg-success"
                                                 style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                }}</td>
+                                                }}
+                                            </td>
                                             @elseif ($item == 'AMAN')
                                             <td class="bg-success"
                                                 style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                }}</td>
-                                            @elseif ($item == 'ALERT')
-                                            <td class="bg-danger"
-                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                }}</td>
-                                            @elseif ($item == 'OVERLOAD')
-                                            <td class="bg-danger"
-                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                }}</td>
-                                            @elseif ($key == 'CAPACITY')
-                                            <td class="column1"
-                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                }}</td>
-                                            @elseif ($i === 0)
-                                            <td class="cell-2"
-                                                style="vertical-align: middle; text-align: center; padding: 0;">{{ $item
                                                 }}
                                             </td>
+                                            @elseif ($item == 'ALERT')
+                                            <td class="bg-danger"
+                                                style="vertical-align : middle;text-align:center; padding:0;">
+                                                {{ $item }}</td>
+                                            @elseif ($item == 'OVERLOAD')
+                                            <td class="bg-danger"
+                                                style="vertical-align : middle;text-align:center; padding:0;">
+                                                {{ $item }}</td>
+                                            @elseif ($key == 'CAPACITY')
+                                            <td class="column1"
+                                                style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                $item }}</td>
+                                                @elseif ($i === 0)
+                                                <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                                                    {{ $item }}
+                                                </td>
+                                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                $key=='ONT1' || $key=='ONT4'))
+                                                <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                    $item }}</td>
+                                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                    style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                    }}</td>
+                                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                        $item }}</td>
+
                                             @else
                                             <td style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                }}</td>
+                                                }}
+                                            </td>
                                             @endif
                                             @endforeach
                                             </tr>
                                             @endfor
                                             <tr class="column1">
-                                                @foreach ($slicedDataTotal8[0] as $key => $item)
-                                                @if ($item == 'TOTAL STOCK WH SO SIDOARJO')
+                                                @foreach ($slicedDataTotal6[0] as $key => $item)
+                                                @php
+                                                $decimalValue = false;
+                                                if (is_numeric($item) && floor($item) != $item) {
+                                                $decimalValue = true;
+                                                }
+                                                @endphp
+                                                @if ($item == 'TOTAL STOCK WH SO SBS')
                                                 <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                     colspan="3">
                                                     {{
@@ -519,6 +648,16 @@
                                                     $item
                                                     }}
                                                 </td>
+                                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                $key=='ONT1' || $key=='ONT4'))
+                                                <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                    $item }}</td>
+                                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                    style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                    }}</td>
+                                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                        $item }}</td>
                                                 @else
                                                 <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                     $item
@@ -527,43 +666,78 @@
                                                 @endif
                                                 @endforeach
                                             </tr>
-                                            @for ($i = 0; $i < count($slicedDataAlert9); $i++) <tr>
-                                                @foreach ($slicedDataAlert9[$i] as $key => $item)
+                                            @for ($i = 0; $i < count($slicedDataAlert7); $i++) <tr>
+                                                @foreach ($slicedDataAlert7[$i] as $key => $item)
+                                                @php
+                                                $decimalValue = false;
+                                                if (is_numeric($item) && floor($item) != $item) {
+                                                $decimalValue = true;
+                                                }
+                                                @endphp
                                                 @if ($item == 'STOCK AMAN')
                                                 <td class="bg-success"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                    $item }}</td>
+                                                    $item
+                                                    }}
+                                                </td>
                                                 @elseif ($item == 'AMAN')
                                                 <td class="bg-success"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                    $item }}</td>
+                                                    $item
+                                                    }}
+                                                </td>
                                                 @elseif ($item == 'ALERT')
                                                 <td class="bg-danger"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                    $item }}</td>
+                                                    $item
+                                                    }}
+                                                </td>
                                                 @elseif ($item == 'OVERLOAD')
                                                 <td class="bg-danger"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                    $item }}</td>
+                                                    $item
+                                                    }}
+                                                </td>
                                                 @elseif ($key == 'CAPACITY')
                                                 <td class="column1"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                    $item }}</td>
-                                                @elseif ($i === 0)
-                                                <td class="cell-2"
-                                                    style="vertical-align: middle; text-align: center; padding: 0;">{{
-                                                    $item }}
+                                                    $item
+                                                    }}
                                                 </td>
+                                                @elseif ($i === 0)
+                                                <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                    $item
+                                                    }}
+                                                </td>
+                                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                $key=='ONT1' || $key=='ONT4'))
+                                                <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                    $item }}</td>
+                                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                    style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                    }}</td>
+                                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                        $item }}</td>
+
                                                 @else
                                                 <td style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                    $item }}</td>
+                                                    $item
+                                                    }}
+                                                </td>
                                                 @endif
                                                 @endforeach
                                                 </tr>
                                                 @endfor
                                                 <tr class="column1">
-                                                    @foreach ($slicedDataTotal9[0] as $key => $item)
-                                                    @if ($item == 'TOTAL STOCK WH SO JEMBER')
+                                                    @foreach ($slicedDataTotal7[0] as $key => $item)
+                                                    @php
+                                                    $decimalValue = false;
+                                                    if (is_numeric($item) && floor($item) != $item) {
+                                                    $decimalValue = true;
+                                                    }
+                                                    @endphp
+                                                    @if ($item == 'TOTAL STOCK WH SO KEDIRI')
                                                     <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                         colspan="3">
                                                         {{
@@ -589,6 +763,16 @@
                                                         $item
                                                         }}
                                                     </td>
+                                                    @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                    $key=='ONT1' || $key=='ONT4'))
+                                                    <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                        $item }}</td>
+                                                    @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                        }}</td>
+                                                        @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                            style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                            $item }}</td>
                                                     @else
                                                     <td style="vertical-align: middle; text-align: center; padding: 0;">
                                                         {{
@@ -598,43 +782,73 @@
                                                     @endif
                                                     @endforeach
                                                 </tr>
-                                                @for ($i = 0; $i < count($slicedDataAlert10); $i++) <tr>
-                                                    @foreach ($slicedDataAlert10[$i] as $key => $item)
+                                                @for ($i = 0; $i < count($slicedDataAlert8); $i++) <tr>
+                                                    @foreach ($slicedDataAlert8[$i] as $key => $item)
+                                                    @php
+                                                    $decimalValue = false;
+                                                    if (is_numeric($item) && floor($item) != $item) {
+                                                    $decimalValue = true;
+                                                    }
+                                                    @endphp
                                                     @if ($item == 'STOCK AMAN')
                                                     <td class="bg-success"
                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                        $item }}</td>
+                                                        $item
+                                                        }}</td>
                                                     @elseif ($item == 'AMAN')
                                                     <td class="bg-success"
                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                        $item }}</td>
+                                                        $item
+                                                        }}</td>
                                                     @elseif ($item == 'ALERT')
                                                     <td class="bg-danger"
                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                        $item }}</td>
+                                                        $item
+                                                        }}</td>
                                                     @elseif ($item == 'OVERLOAD')
                                                     <td class="bg-danger"
                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                        $item }}</td>
+                                                        $item
+                                                        }}</td>
                                                     @elseif ($key == 'CAPACITY')
                                                     <td class="column1"
                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                        $item }}</td>
-                                                    @elseif ($i === 0)
-                                                    <td class="cell-2"
-                                                        style="vertical-align: middle; text-align: center; padding: 0;">
-                                                        {{ $item }}
-                                                    </td>
+                                                        $item
+                                                        }}</td>
+                                                        @elseif ($i === 0)
+                                                        <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                                                            {{
+                                                            $item
+                                                            }}
+                                                        </td>
+                                                        @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                        $key=='ONT1' || $key=='ONT4'))
+                                                        <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                            $item }}</td>
+                                                        @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                            }}</td>
+                                                            @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                                $item }}</td>
+
                                                     @else
                                                     <td style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                        $item }}</td>
+                                                        $item
+                                                        }}</td>
                                                     @endif
                                                     @endforeach
                                                     </tr>
                                                     @endfor
                                                     <tr class="column1">
-                                                        @foreach ($slicedDataTotal10[0] as $key => $item)
-                                                        @if ($item == 'TOTAL STOCK WH SO MADURA')
+                                                        @foreach ($slicedDataTotal8[0] as $key => $item)
+                                                        @php
+                                                        $decimalValue = false;
+                                                        if (is_numeric($item) && floor($item) != $item) {
+                                                        $decimalValue = true;
+                                                        }
+                                                        @endphp
+                                                        @if ($item == 'TOTAL STOCK WH SO SIDOARJO')
                                                         <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                             colspan="3">
                                                             {{
@@ -660,6 +874,16 @@
                                                             $item
                                                             }}
                                                         </td>
+                                                        @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                        $key=='ONT1' || $key=='ONT4'))
+                                                        <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                            $item }}</td>
+                                                        @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                            }}</td>
+                                                            @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                                $item }}</td>
                                                         @else
                                                         <td
                                                             style="vertical-align: middle; text-align: center; padding: 0;">
@@ -670,44 +894,73 @@
                                                         @endif
                                                         @endforeach
                                                     </tr>
-                                                    @for ($i = 0; $i < count($slicedDataAlert11); $i++) <tr>
-                                                        @foreach ($slicedDataAlert11[$i] as $key => $item)
+                                                    @for ($i = 0; $i < count($slicedDataAlert9); $i++) <tr>
+                                                        @foreach ($slicedDataAlert9[$i] as $key => $item)
+                                                        @php
+                                                        $decimalValue = false;
+                                                        if (is_numeric($item) && floor($item) != $item) {
+                                                        $decimalValue = true;
+                                                        }
+                                                        @endphp
                                                         @if ($item == 'STOCK AMAN')
                                                         <td class="bg-success"
                                                             style="vertical-align : middle;text-align:center; padding:0;">
-                                                            {{ $item }}</td>
+                                                            {{
+                                                            $item }}</td>
                                                         @elseif ($item == 'AMAN')
                                                         <td class="bg-success"
                                                             style="vertical-align : middle;text-align:center; padding:0;">
-                                                            {{ $item }}</td>
+                                                            {{
+                                                            $item }}</td>
                                                         @elseif ($item == 'ALERT')
                                                         <td class="bg-danger"
                                                             style="vertical-align : middle;text-align:center; padding:0;">
-                                                            {{ $item }}</td>
+                                                            {{
+                                                            $item }}</td>
                                                         @elseif ($item == 'OVERLOAD')
                                                         <td class="bg-danger"
                                                             style="vertical-align : middle;text-align:center; padding:0;">
-                                                            {{ $item }}</td>
+                                                            {{
+                                                            $item }}</td>
                                                         @elseif ($key == 'CAPACITY')
                                                         <td class="column1"
                                                             style="vertical-align : middle;text-align:center; padding:0;">
-                                                            {{ $item }}</td>
-                                                        @elseif ($i === 0)
-                                                        <td class="cell-2"
-                                                            style="vertical-align: middle; text-align: center; padding: 0;">
-                                                            {{ $item }}
-                                                        </td>
+                                                            {{
+                                                            $item }}</td>
+                                                            @elseif ($i === 0)
+                                                            <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                                                                {{
+                                                                $item }}
+                                                            </td>
+                                                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                            $key=='ONT1' || $key=='ONT4'))
+                                                            <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                $item }}</td>
+                                                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                }}</td>
+                                                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                                    $item }}</td>
+
                                                         @else
                                                         <td
                                                             style="vertical-align : middle;text-align:center; padding:0;">
-                                                            {{ $item }}</td>
+                                                            {{
+                                                            $item }}</td>
                                                         @endif
                                                         @endforeach
                                                         </tr>
                                                         @endfor
                                                         <tr class="column1">
-                                                            @foreach ($slicedDataTotal11[0] as $key => $item)
-                                                            @if ($item == 'TOTAL STOCK WH SO MATARAM')
+                                                            @foreach ($slicedDataTotal9[0] as $key => $item)
+                                                            @php
+                                                            $decimalValue = false;
+                                                            if (is_numeric($item) && floor($item) != $item) {
+                                                            $decimalValue = true;
+                                                            }
+                                                            @endphp
+                                                            @if ($item == 'TOTAL STOCK WH SO JEMBER')
                                                             <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                                 colspan="3">
                                                                 {{
@@ -733,6 +986,16 @@
                                                                 $item
                                                                 }}
                                                             </td>
+                                                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                            $key=='ONT1' || $key=='ONT4'))
+                                                            <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                $item }}</td>
+                                                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                }}</td>
+                                                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                                    $item }}</td>
                                                             @else
                                                             <td
                                                                 style="vertical-align: middle; text-align: center; padding: 0;">
@@ -743,44 +1006,72 @@
                                                             @endif
                                                             @endforeach
                                                         </tr>
-                                                        @for ($i = 0; $i < count($slicedDataAlert12); $i++) <tr>
-                                                            @foreach ($slicedDataAlert12[$i] as $key => $item)
+                                                        @for ($i = 0; $i < count($slicedDataAlert10); $i++) <tr>
+                                                            @foreach ($slicedDataAlert10[$i] as $key => $item)
+                                                            @php
+                                                            $decimalValue = false;
+                                                            if (is_numeric($item) && floor($item) != $item) {
+                                                            $decimalValue = true;
+                                                            }
+                                                            @endphp
                                                             @if ($item == 'STOCK AMAN')
                                                             <td class="bg-success"
                                                                 style="vertical-align : middle;text-align:center; padding:0;">
-                                                                {{ $item }}</td>
+                                                                {{
+                                                                $item }}</td>
                                                             @elseif ($item == 'AMAN')
                                                             <td class="bg-success"
                                                                 style="vertical-align : middle;text-align:center; padding:0;">
-                                                                {{ $item }}</td>
+                                                                {{
+                                                                $item }}</td>
                                                             @elseif ($item == 'ALERT')
                                                             <td class="bg-danger"
                                                                 style="vertical-align : middle;text-align:center; padding:0;">
-                                                                {{ $item }}</td>
+                                                                {{
+                                                                $item }}</td>
                                                             @elseif ($item == 'OVERLOAD')
                                                             <td class="bg-danger"
                                                                 style="vertical-align : middle;text-align:center; padding:0;">
-                                                                {{ $item }}</td>
+                                                                {{
+                                                                $item }}</td>
                                                             @elseif ($key == 'CAPACITY')
                                                             <td class="column1"
                                                                 style="vertical-align : middle;text-align:center; padding:0;">
-                                                                {{ $item }}</td>
-                                                            @elseif ($i === 0)
-                                                            <td class="cell-2"
-                                                                style="vertical-align: middle; text-align: center; padding: 0;">
-                                                                {{ $item }}
-                                                            </td>
+                                                                {{
+                                                                $item }}</td>
+                                                                @elseif ($i === 0)
+                                                                <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                                                                    {{ $item }}
+                                                                </td>
+                                                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                                $key=='ONT1' || $key=='ONT4'))
+                                                                <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                    $item }}</td>
+                                                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                                    style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                    }}</td>
+                                                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                                        $item }}</td>
+
                                                             @else
                                                             <td
                                                                 style="vertical-align : middle;text-align:center; padding:0;">
-                                                                {{ $item }}</td>
+                                                                {{
+                                                                $item }}</td>
                                                             @endif
                                                             @endforeach
                                                             </tr>
                                                             @endfor
                                                             <tr class="column1">
-                                                                @foreach ($slicedDataTotal12[0] as $key => $item)
-                                                                @if ($item == 'TOTAL STOCK WH SO KUPANG')
+                                                                @foreach ($slicedDataTotal10[0] as $key => $item)
+                                                                @php
+                                                                $decimalValue = false;
+                                                                if (is_numeric($item) && floor($item) != $item) {
+                                                                $decimalValue = true;
+                                                                }
+                                                                @endphp
+                                                                @if ($item == 'TOTAL STOCK WH SO MADURA')
                                                                 <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                                     colspan="3">
                                                                     {{
@@ -806,6 +1097,16 @@
                                                                     $item
                                                                     }}
                                                                 </td>
+                                                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                                $key=='ONT1' || $key=='ONT4'))
+                                                                <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                    $item }}</td>
+                                                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                                    style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                    }}</td>
+                                                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                                        $item }}</td>
                                                                 @else
                                                                 <td
                                                                     style="vertical-align: middle; text-align: center; padding: 0;">
@@ -816,8 +1117,14 @@
                                                                 @endif
                                                                 @endforeach
                                                             </tr>
-                                                            @for ($i = 0; $i < count($slicedDataAlert13); $i++) <tr>
-                                                                @foreach ($slicedDataAlert13[$i] as $key => $item)
+                                                            @for ($i = 0; $i < count($slicedDataAlert11); $i++) <tr>
+                                                                @foreach ($slicedDataAlert11[$i] as $key => $item)
+                                                                @php
+                                                                $decimalValue = false;
+                                                                if (is_numeric($item) && floor($item) != $item) {
+                                                                $decimalValue = true;
+                                                                }
+                                                                @endphp
                                                                 @if ($item == 'STOCK AMAN')
                                                                 <td class="bg-success"
                                                                     style="vertical-align : middle;text-align:center; padding:0;">
@@ -838,11 +1145,21 @@
                                                                 <td class="column1"
                                                                     style="vertical-align : middle;text-align:center; padding:0;">
                                                                     {{ $item }}</td>
-                                                                @elseif ($i === 0)
-                                                                <td class="cell-2"
-                                                                    style="vertical-align: middle; text-align: center; padding: 0;">
-                                                                    {{ $item }}
-                                                                </td>
+                                                                    @elseif ($i === 0)
+                                                                    <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                                                                        {{ $item }}
+                                                                    </td>
+                                                                    @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                                    $key=='ONT1' || $key=='ONT4'))
+                                                                    <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                        $item }}</td>
+                                                                    @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                        }}</td>
+                                                                        @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                                            $item }}</td>
+
                                                                 @else
                                                                 <td
                                                                     style="vertical-align : middle;text-align:center; padding:0;">
@@ -852,8 +1169,14 @@
                                                                 </tr>
                                                                 @endfor
                                                                 <tr class="column1">
-                                                                    @foreach ($slicedDataTotal13[0] as $key => $item)
-                                                                    @if ($item == 'TOTAL STOCK WH SO SBU')
+                                                                    @foreach ($slicedDataTotal11[0] as $key => $item)
+                                                                    @php
+                                                                    $decimalValue = false;
+                                                                    if (is_numeric($item) && floor($item) != $item) {
+                                                                    $decimalValue = true;
+                                                                    }
+                                                                    @endphp
+                                                                    @if ($item == 'TOTAL STOCK WH SO MATARAM')
                                                                     <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                                         colspan="3">
                                                                         {{
@@ -879,6 +1202,16 @@
                                                                         $item
                                                                         }}
                                                                     </td>
+                                                                    @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                                    $key=='ONT1' || $key=='ONT4'))
+                                                                    <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                        $item }}</td>
+                                                                    @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                        }}</td>
+                                                                        @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                                            $item }}</td>
                                                                     @else
                                                                     <td
                                                                         style="vertical-align: middle; text-align: center; padding: 0;">
@@ -889,18 +1222,67 @@
                                                                     @endif
                                                                     @endforeach
                                                                 </tr>
-                                                                @for ($i = 0; $i < count($slicedDataAlert14); $i++) <tr>
-                                                                    @foreach ($slicedDataAlert14[$i] as $key => $item)
-                                                                    <td class="cell-2"
+                                                                @for ($i = 0; $i < count($slicedDataAlert12); $i++) <tr>
+                                                                    @foreach ($slicedDataAlert12[$i] as $key => $item)
+                                                                    @php
+                                                                    $decimalValue = false;
+                                                                    if (is_numeric($item) && floor($item) != $item) {
+                                                                    $decimalValue = true;
+                                                                    }
+                                                                    @endphp
+                                                                    @if ($item == 'STOCK AMAN')
+                                                                    <td class="bg-success"
                                                                         style="vertical-align : middle;text-align:center; padding:0;">
                                                                         {{ $item }}</td>
+                                                                    @elseif ($item == 'AMAN')
+                                                                    <td class="bg-success"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">
+                                                                        {{ $item }}</td>
+                                                                    @elseif ($item == 'ALERT')
+                                                                    <td class="bg-danger"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">
+                                                                        {{ $item }}</td>
+                                                                    @elseif ($item == 'OVERLOAD')
+                                                                    <td class="bg-danger"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">
+                                                                        {{ $item }}</td>
+                                                                    @elseif ($key == 'CAPACITY')
+                                                                    <td class="column1"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">
+                                                                        {{ $item }}</td>
+                                                                        @elseif ($i === 0)
+                                                                        <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                                                                            {{ $item }}
+                                                                        </td>
+                                                                        @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                                        $key=='ONT1' || $key=='ONT4'))
+                                                                        <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                            $item }}</td>
+                                                                        @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                            }}</td>
+                                                                            @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                                style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                                                $item }}</td>
+
+                                                                    @else
+                                                                    <td
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">
+                                                                        {{ $item }}</td>
+                                                                    @endif
                                                                     @endforeach
                                                                     </tr>
                                                                     @endfor
-                                                                    <tr class="column2">
-                                                                        @foreach ($slicedDataTotal14[0] as $key =>
+                                                                    <tr class="column1">
+                                                                        @foreach ($slicedDataTotal12[0] as $key =>
                                                                         $item)
-                                                                        @if ($item == 'TOTAL')
+                                                                        @php
+                                                                        $decimalValue = false;
+                                                                        if (is_numeric($item) && floor($item) != $item) {
+                                                                        $decimalValue = true;
+                                                                        }
+                                                                        @endphp
+                                                                        @if ($item == 'TOTAL STOCK WH SO KUPANG')
                                                                         <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                                             colspan="3">
                                                                             {{
@@ -926,6 +1308,16 @@
                                                                             $item
                                                                             }}
                                                                         </td>
+                                                                        @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                                        $key=='ONT1' || $key=='ONT4'))
+                                                                        <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                            $item }}</td>
+                                                                        @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                            }}</td>
+                                                                            @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                                style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                                                $item }}</td>
                                                                         @else
                                                                         <td
                                                                             style="vertical-align: middle; text-align: center; padding: 0;">
@@ -936,6 +1328,173 @@
                                                                         @endif
                                                                         @endforeach
                                                                     </tr>
+                                                                    @for ($i = 0; $i < count($slicedDataAlert13); $i++)
+                                                                        <tr>
+                                                                        @foreach ($slicedDataAlert13[$i] as $key =>
+                                                                        $item)
+                                                                        @php
+                                                                        $decimalValue = false;
+                                                                        if (is_numeric($item) && floor($item) != $item) {
+                                                                        $decimalValue = true;
+                                                                        }
+                                                                        @endphp
+                                                                        @if ($item == 'STOCK AMAN')
+                                                                        <td class="bg-success"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                                                            {{ $item }}</td>
+                                                                        @elseif ($item == 'AMAN')
+                                                                        <td class="bg-success"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                                                            {{ $item }}</td>
+                                                                        @elseif ($item == 'ALERT')
+                                                                        <td class="bg-danger"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                                                            {{ $item }}</td>
+                                                                        @elseif ($item == 'OVERLOAD')
+                                                                        <td class="bg-danger"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                                                            {{ $item }}</td>
+                                                                        @elseif ($key == 'CAPACITY')
+                                                                        <td class="column1"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                                                            {{ $item }}</td>
+                                                                            @elseif ($i === 0)
+                                                                            <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
+                                                                                {{ $item }}
+                                                                            </td>
+                                                                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                                            $key=='ONT1' || $key=='ONT4'))
+                                                                            <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                                $item }}</td>
+                                                                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                                }}</td>
+                                                                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                                                    $item }}</td>
+
+                                                                        @else
+                                                                        <td
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">
+                                                                            {{ $item }}</td>
+                                                                        @endif
+                                                                        @endforeach
+                                                                        </tr>
+                                                                        @endfor
+                                                                        <tr class="column1">
+                                                                            @foreach ($slicedDataTotal13[0] as $key =>
+                                                                            $item)
+                                                                            @php
+                                                                            $decimalValue = false;
+                                                                            if (is_numeric($item) && floor($item) != $item) {
+                                                                            $decimalValue = true;
+                                                                            }
+                                                                            @endphp
+                                                                            @php
+                                                                            $isNegative = false;
+                                                                            if ($item < 0) { $isNegative=true; } @endphp
+
+                                                                            @if ($item == 'TOTAL STOCK WH SO SBU')
+                                                                            <td style="vertical-align: middle; text-align: center; padding: 0;"
+                                                                                colspan="3">
+                                                                                {{
+                                                                                $item
+                                                                                }}
+                                                                            </td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            @elseif ($item == '')
+                                                                            <td style="display: none"></td>
+                                                                            @elseif ($item == 'KEBUTUHAN TAG WH SO')
+                                                                            <td style="vertical-align: middle; text-align: center; padding: 0;"
+                                                                                colspan="2">
+                                                                                {{
+                                                                                $item
+                                                                                }}
+                                                                            </td>
+                                                                            @elseif ($item == 'KEBUTHAN DONOR WITEL')
+                                                                            <td style="vertical-align: middle; text-align: center; padding: 0;"
+                                                                                colspan="2">
+                                                                                {{
+                                                                                $item
+                                                                                }}
+                                                                            </td>
+                                                                            @elseif ($isNegative && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                                            $key=='ONT1' || $key=='ONT4'))
+                                                                            <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                                $item }}</td>
+                                                                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
+                                                                            $key=='ONT1' || $key=='ONT4'))
+                                                                            <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                                $item }}</td>
+                                                                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                                }}</td>
+                                                                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
+                                                                                    $item }}</td>
+                                                                            @else
+                                                                            <td
+                                                                                style="vertical-align: middle; text-align: center; padding: 0;">
+                                                                                {{
+                                                                                $item
+                                                                                }}
+                                                                            </td>
+                                                                            @endif
+                                                                            @endforeach
+                                                                        </tr>
+                                                                        @for ($i = 0; $i < count($slicedDataAlert14);
+                                                                            $i++) <tr>
+                                                                            @foreach ($slicedDataAlert14[$i] as $key =>
+                                                                            $item)
+                                                                            <td class="cell-2"
+                                                                                style="vertical-align : middle;text-align:center; padding:0;">
+                                                                                {{ $item }}</td>
+                                                                            @endforeach
+                                                                            </tr>
+                                                                            @endfor
+                                                                            <tr class="column2">
+                                                                                @foreach ($slicedDataTotal14[0] as $key
+                                                                                =>
+                                                                                $item)
+                                                                                @if ($item == 'TOTAL')
+                                                                                <td style="vertical-align: middle; text-align: center; padding: 0;"
+                                                                                    colspan="3">
+                                                                                    {{
+                                                                                    $item
+                                                                                    }}
+                                                                                </td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                @elseif ($item == '')
+                                                                                <td style="display: none"></td>
+                                                                                @elseif ($item == 'KEBUTUHAN TAG WH SO')
+                                                                                <td style="vertical-align: middle; text-align: center; padding: 0;"
+                                                                                    colspan="2">
+                                                                                    {{
+                                                                                    $item
+                                                                                    }}
+                                                                                </td>
+                                                                                @elseif ($item == 'KEBUTHAN DONOR
+                                                                                WITEL')
+                                                                                <td style="vertical-align: middle; text-align: center; padding: 0;"
+                                                                                    colspan="2">
+                                                                                    {{
+                                                                                    $item
+                                                                                    }}
+                                                                                </td>
+                                                                                @else
+                                                                                <td
+                                                                                    style="vertical-align: middle; text-align: center; padding: 0;">
+                                                                                    {{
+                                                                                    $item
+                                                                                    }}
+                                                                                </td>
+                                                                                @endif
+                                                                                @endforeach
+                                                                            </tr>
         </tbody>
     </table>
 </div>
