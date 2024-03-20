@@ -13,118 +13,140 @@
             <tr>
                 {{-- <th style="vertical-align : middle;text-align:center;" rowspan="3">No</th> --}}
                 <th class="column1"
-                    style="vertical-align : middle;text-align:center;padding-left:8rem;padding-right:8rem" rowspan="3">
+                    style="vertical-align : middle;text-align:center;padding-left:7rem;padding-right:7rem" rowspan="4">
                     Witel</th>
-                <th class="text-center ont-main-text" colspan="15">ONT</th>
+                <th class="text-center ont-main-text cell-2" colspan="16">ONT</th>
+                <th class="cell-2" style="vertical-align : middle;text-align:center;" rowspan="4">GT</th>
                 <th class="text-center ont-main-text bg-warning" colspan="6">STB</th>
-                <th class="text-center ont-main-text bg-warning" colspan="1"></th>
-                <th class="text-center ont-main-text bg-info" colspan="5"></th>
+                <th class="bg-warning" style="vertical-align : middle;text-align:center;" rowspan="4">GT</th>
+                <th class="bg-info" style="vertical-align : middle;text-align:center;" rowspan="3" colspan="4">ORBIT
+                </th>
+                <th class="bg-info" style="vertical-align : middle;text-align:center;" rowspan="3" colspan="4">ADD ON
+                </th>
+                {{-- <th class="text-center ont-main-text bg-warning" colspan="1"></th>
+                <th class="text-center ont-main-text bg-info" colspan="5"></th> --}}
             </tr>
 
             <tr>
-                <th class="text-center ont-main-text" colspan="4">FH</th>
-                <th class="text-center" colspan="4">Huawei</th>
-                <th class="text-center" colspan="2">Nokia</th>
-                <th class="text-center" colspan="4">ZTE</th>
-                <th style="vertical-align : middle;text-align:center;" rowspan="3">GT</th>
-                <th class="text-center ont-main-text bg-warning" colspan="2">FH</th>
-                <th class="text-center ont-main-text bg-warning" colspan="4">ZTE</th>
-                <th class="bg-warning" style="vertical-align : middle;text-align:center;" rowspan="3">GT</th>
-                <th class="text-center ont-main-text bg-info" colspan="5">Orbit</th>
+                <th class="text-center ont-main-text cell-2" colspan="4">ONT SINGLE BAND</th>
+                <th class="text-center ont-main-text bg-info" colspan="7">ONT DUAL BAND</th>
+                <th class="text-center ont-main-text bg-danger" colspan="5">ONT PREMIUM</th>
+                <th class="bg-warning" colspan="6"></th>
+            </tr>
+
+            <tr>
+                <th style="padding: 0;" class="text-center ont-main-text cell-2">FH</th>
+                <th style="padding: 0;" class="text-center cell-2">HW</th>
+                <th style="padding: 0;" class="text-center cell-2">NOKIA</th>
+                <th style="padding: 0;" class="text-center cell-2">ZTE</th>
+                <th style="padding: 0;" class="text-center ont-main-text bg-info">FH</th>
+                <th style="padding: 0;" class="text-center bg-info" colspan="2">HW</th>
+                <th style="padding: 0;" class="text-center bg-info" colspan="2">ZTE</th>
+                <th style="padding: 0;" class="text-center bg-info">FH</th>
+                <th style="padding: 0;" class="text-center bg-info">NOKIA</th>
+                <th style="padding: 0;" class="text-center bg-danger" colspan="2">HW</th>
+                <th style="padding: 0;" class="text-center bg-danger" colspan="2">ZTE</th>
+                <th style="padding: 0;" class="text-center bg-danger">FH</th>
+                <th style="padding: 0;" class="text-center bg-warning" colspan="2">Fiberhome</th>
+                <th style="padding: 0;" class="text-center bg-warning" colspan="4">ZTE</th>
             </tr>
             <tr class="ont-text">
-                {{-- Fiberhome --}}
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT
-                    _FH
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="cell-2">ONT_
+                    FH
+                    _HG6243C
+                </th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="cell-2">ONT_
+                    HW
+                    _HG8245H5
+                </th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="cell-2">ONT_
+                    NOKIA
+                    _G240WL</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="cell-2">ONT_
+                    ZTE
+                    _F609_
+                    V5.3</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT_
+                    FH
                     _HG6145D2</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT
-                    _FH
-                    _HG6145F</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT
-                    _FH
-                    _HG6245N</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;">ONT
-                    _FH
-                    _HG6243C</th>
-                {{-- Huawei --}}
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT
-                    _HUAWEI
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT_
+                    HW
                     _HG8145V5</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT
-                    _HUAWEI_
-                    HG8245U</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT
-                    _HUAWEI
-                    HG8245W5-6T</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;">ONT
-                    _HUAWEI
-                    _HG8245H5</th>
-                {{-- Nokia --}}
-                <th class="px-1" style="vertical-align : middle;text-align:center; padding:0;">ONT
-                    _NOKIA_
-                    G240WL</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info px-1">ONT
-                    _NOKIA_
-                    G-242
-                    5G-A</th>
-                {{-- ZTE --}}
-                <th style="vertical-align : middle;text-align:center; padding:0;">ONT
-                    _ZTE_F609
-                    _V5.3</th>
-                <th class="bg-danger px-1" style="vertical-align : middle;text-align:center; padding:0;">ONT
-                    _ZTE_F6
-                    70</th>
-                <th class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">ONT
-                    _ZTE_F670
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT_
+                    HW
+                    _HG8145X6
+                    -10</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT_
+                    ZTE
+                    _F670L</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT_
+                    ZTE
+                    _F6600P</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT_
+                    FH
+                    _HG6145F</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT_
+                    NOKIA
+                    _G-2425G-A</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT_
+                    HW
+                    _HG8245U</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT_
+                    HW
+                    HG8245W5
+                    -6T</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT_
+                    ZTE_
+                    F670</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT_
+                    ZTE_
+                    F670
                     V2.0</th>
-                <th class="bg-info px-2" style="vertical-align : middle;text-align:center; padding:0;">ONT
-                    _ZTE_
-                    F670L</th>
-                {{-- Fiberhome --}}
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">
-                    STBIPTV
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT_
+                    FH
+                    _HG6245N</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">STP
+                    IPTV
                     _FH_
                     HG680-P</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">
-                    STBIPTV
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">STP
+                    IPTV
                     _FH_
                     HG680FJ</th>
-                {{-- ZTE --}}
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">
-                    STB
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">STP
                     _ZTE_
                     ZX10_
                     B866F_
-                    V1.1
-                </th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">
-                    STBIPTV
+                    V1.1</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">STP
+                    IPTV
                     _ZTE_
                     B860H_
-                    V2.1
-                </th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">
-                    STBIPTV
+                    V2.1</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">STP
+                    IPTV
                     _ZTE_
                     B860H</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">
-                    STB
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">STP
                     _ZTE_
                     B860H_
                     V5.0</th>
-                {{-- Orbit --}}
                 <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ORBIT
-                    REGULER</th>
+                    REG</th>
                 <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ORBIT_SS
-                    exROUTER_
-                    HKM0128a</th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">Orbit
-                    _IP_
-                    ZTE_
+                    exROUTER
+                    _HKM0128a</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">Orbit_IP
+                    _ZTE_
                     MF920US</th>
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ORBIT SS
+                    _ZTE_
+                    K10_STAR
+                    _Z2</th>
                 <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">KP
                     SMOOA</th>
                 <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">REMOTE</th>
+
             </tr>
         </thead>
         <tbody>

@@ -105,6 +105,10 @@
                 $decimalValue = true;
                 }
                 @endphp
+                @php
+                $isNegative = false;
+                if ($item < 0) { $isNegative=true; }
+                @endphp
                 @if ($item == 'STOCK AMAN')
                 <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                 @elseif ($item == 'AMAN')
@@ -115,12 +119,13 @@
                 <td class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
                 @elseif ($key == 'CAPACITY')
                 <td class="column1" style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
-                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' || $key=='ONT1' ||
-                $key=='ONT4'))
+                @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
+                @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                 <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
-                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                     style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
-                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                    @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                         style="vertical-align : middle;text-align:center; padding:0;">{{ $item }}</td>
 
                         @else
@@ -137,6 +142,9 @@
                             $decimalValue = true;
                             }
                             @endphp
+                            @php
+                            $isNegative = false;
+                            if ($item < 0) { $isNegative=true; } @endphp
                             @if ($item == 'TOTAL STOCK WH SO DENPASAR')
                             <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{
                                 $item }}</td>
@@ -151,17 +159,18 @@
                             @elseif ($item == 'KEBUTHAN DONOR WITEL')
                             <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{
                                 $item }}</td>
-                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                            $key=='ONT1' || $key=='ONT4'))
+                            @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                            <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                $item }}</td>
+                            @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                             <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                 $item }}</td>
-                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td
+                            @elseif ($item < 20 && $key=='ONT1') <td
                                 class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                 }}</td>
-                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td
+                                @elseif ($item < 15 && $key=='STB1') <td
                                     class="bg-danger" style="vertical-align : middle;text-align:center; padding:0;">{{
                                     $item }}</td>
-
                                     @else
                                     <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
                                     @endif
@@ -176,6 +185,9 @@
                             $decimalValue = true;
                             }
                             @endphp
+                            @php
+                            $isNegative = false;
+                            if ($item < 0) { $isNegative=true; } @endphp
                             @if ($item === 'STOCK AMAN')
                             <td class="bg-success" style="vertical-align: middle; text-align: center; padding: 0;">{{
                                 $item
@@ -204,17 +216,18 @@
                             <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">{{ $item
                                 }}
                             </td>
-                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                            $key=='ONT1' || $key=='ONT4'))
+                            @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                            <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                $item }}</td>
+                            @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                             <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                 $item }}</td>
-                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                            @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                 style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                 }}</td>
-                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                            @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                     style="vertical-align : middle;text-align:center; padding:0;">{{
                                     $item }}</td>
-
                             @else
                             <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
                             @endif
@@ -229,6 +242,9 @@
                                 $decimalValue = true;
                                 }
                                 @endphp
+                                @php
+                                $isNegative = false;
+                                if ($item < 0) { $isNegative=true; } @endphp
                                 @if ($item == 'TOTAL STOCK WH SO SINGARAJA')
                                 <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{ $item
                                     }}
@@ -246,16 +262,18 @@
                                 <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="2">{{ $item
                                     }}
                                 </td>
-                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                $key=='ONT1' || $key=='ONT4'))
+                                @elseif ($isNegative && $key=='STB1' || $key=='ONT1')
+                                <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                    $item }}</td>
+                                @elseif ($decimalValue && $key=='STB1' || $key=='ONT1')
                                 <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                     $item }}</td>
-                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                     style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                     }}</td>
-                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
-                                        style="vertical-align : middle;text-align:center; padding:0;">{{
-                                        $item }}</td>
+                                @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
+                                 style="vertical-align : middle;text-align:center; padding:0;">{{
+                                 $item }}</td>
                                 @else
                                 <td style="vertical-align: middle; text-align: center; padding: 0;">{{ $item }}</td>
                                 @endif
@@ -269,6 +287,9 @@
                                 $decimalValue = true;
                                 }
                                 @endphp
+                                @php
+                                $isNegative = false;
+                                if ($item < 0) { $isNegative=true; } @endphp
                                 @if ($item == 'STOCK AMAN')
                                 <td class="bg-success" style="vertical-align : middle;text-align:center; padding:0;">{{
                                     $item }}
@@ -297,14 +318,16 @@
                                     $item
                                     }}
                                 </td>
-                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                $key=='ONT1' || $key=='ONT4'))
+                                @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                    $item }}</td>
+                                @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                 <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                     $item }}</td>
-                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                     style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                     }}</td>
-                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                    @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                         style="vertical-align : middle;text-align:center; padding:0;">{{
                                         $item }}</td>
 
@@ -322,6 +345,9 @@
                                     $decimalValue = true;
                                     }
                                     @endphp
+                                    @php
+                                    $isNegative = false;
+                                    if ($item < 0) { $isNegative=true; } @endphp
                                     @if ($item == 'TOTAL STOCK WH SO MADIUN')
                                     <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">{{
                                         $item
@@ -342,14 +368,16 @@
                                         $item
                                         }}
                                     </td>
-                                    @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                    $key=='ONT1' || $key=='ONT4'))
+                                    @elseif ($isNegative && ($key=='STB1' || $key=='ONT1' ))
+                                    <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                        $item }}</td>
+                                    @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1' ))
                                     <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                         $item }}</td>
-                                    @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                    @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                         style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                         }}</td>
-                                        @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                        @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                             style="vertical-align : middle;text-align:center; padding:0;">{{
                                             $item }}</td>
                                     @else
@@ -365,6 +393,9 @@
                                     $decimalValue = true;
                                     }
                                     @endphp
+                                    @php
+                                    $isNegative = false;
+                                    if ($item < 0) { $isNegative=true; } @endphp
                                     @if ($item == 'STOCK AMAN')
                                     <td class="bg-success"
                                         style="vertical-align : middle;text-align:center; padding:0;">{{
@@ -393,14 +424,16 @@
                                             $item
                                             }}
                                         </td>
-                                        @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                        $key=='ONT1' || $key=='ONT4'))
+                                        @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                        <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                            $item }}</td>
+                                        @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                         <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                             $item }}</td>
-                                        @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                        @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                             style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                             }}</td>
-                                            @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                            @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                 style="vertical-align : middle;text-align:center; padding:0;">{{
                                                 $item }}</td>
 
@@ -418,6 +451,9 @@
                                         $decimalValue = true;
                                         }
                                         @endphp
+                                        @php
+                                        $isNegative = false;
+                                        if ($item < 0) { $isNegative=true; } @endphp
                                         @if ($item == 'TOTAL STOCK WH SO MALANG')
                                         <td style="vertical-align: middle; text-align: center; padding: 0;" colspan="3">
                                             {{
@@ -441,14 +477,16 @@
                                             $item
                                             }}
                                         </td>
-                                        @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                        $key=='ONT1' || $key=='ONT4'))
+                                        @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                        <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                            $item }}</td>
+                                        @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                         <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                             $item }}</td>
-                                        @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                        @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                             style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                             }}</td>
-                                            @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                            @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                 style="vertical-align : middle;text-align:center; padding:0;">{{
                                                 $item }}</td>
                                         @else
@@ -465,6 +503,9 @@
                                         $decimalValue = true;
                                         }
                                         @endphp
+                                        @php
+                                        $isNegative = false;
+                                        if ($item < 0) { $isNegative=true; } @endphp
                                         @if ($item == 'STOCK AMAN')
                                         <td class="bg-success"
                                             style="vertical-align : middle;text-align:center; padding:0;">{{
@@ -492,14 +533,16 @@
                                                 {{
                                                 $item }}
                                             </td>
-                                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                            $key=='ONT1' || $key=='ONT4'))
+                                            @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                            <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                $item }}</td>
+                                            @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                             <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                 $item }}</td>
-                                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                            @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                                 style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                 }}</td>
-                                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{
                                                     $item }}</td>
 
@@ -518,6 +561,9 @@
                                             $decimalValue = true;
                                             }
                                             @endphp
+                                            @php
+                                            $isNegative = false;
+                                            if ($item < 0) { $isNegative=true; } @endphp
                                             @if ($item == 'TOTAL STOCK WH SO PASURUAN')
                                             <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                 colspan="3">
@@ -544,14 +590,16 @@
                                                 $item
                                                 }}
                                             </td>
-                                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                            $key=='ONT1' || $key=='ONT4'))
+                                            @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                            <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                $item }}</td>
+                                            @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                             <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                 $item }}</td>
-                                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                            @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                                 style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                 }}</td>
-                                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{
                                                     $item }}</td>
                                             @else
@@ -569,6 +617,9 @@
                                             $decimalValue = true;
                                             }
                                             @endphp
+                                            @php
+                                            $isNegative = false;
+                                            if ($item < 0) { $isNegative=true; } @endphp
                                             @if ($item == 'STOCK AMAN')
                                             <td class="bg-success"
                                                 style="vertical-align : middle;text-align:center; padding:0;">{{ $item
@@ -595,14 +646,16 @@
                                                 <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
                                                     {{ $item }}
                                                 </td>
-                                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                $key=='ONT1' || $key=='ONT4'))
+                                                @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                    $item }}</td>
+                                                @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                                 <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                     $item }}</td>
-                                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                     }}</td>
-                                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                    @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
                                                         $item }}</td>
 
@@ -622,6 +675,9 @@
                                                 $decimalValue = true;
                                                 }
                                                 @endphp
+                                                @php
+                                                $isNegative = false;
+                                                if ($item < 0) { $isNegative=true; } @endphp
                                                 @if ($item == 'TOTAL STOCK WH SO SBS')
                                                 <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                     colspan="3">
@@ -648,14 +704,16 @@
                                                     $item
                                                     }}
                                                 </td>
-                                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                $key=='ONT1' || $key=='ONT4'))
+                                                @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                    $item }}</td>
+                                                @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                                 <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                     $item }}</td>
-                                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                     }}</td>
-                                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                    @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
                                                         $item }}</td>
                                                 @else
@@ -674,6 +732,9 @@
                                                 $decimalValue = true;
                                                 }
                                                 @endphp
+                                                @php
+                                                $isNegative = false;
+                                                if ($item < 0) { $isNegative=true; } @endphp
                                                 @if ($item == 'STOCK AMAN')
                                                 <td class="bg-success"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{
@@ -709,14 +770,16 @@
                                                     $item
                                                     }}
                                                 </td>
-                                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                $key=='ONT1' || $key=='ONT4'))
+                                                @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                    $item }}</td>
+                                                @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                                 <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                     $item }}</td>
-                                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                                     style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                     }}</td>
-                                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                    @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
                                                         $item }}</td>
 
@@ -737,6 +800,9 @@
                                                     $decimalValue = true;
                                                     }
                                                     @endphp
+                                                    @php
+                                                    $isNegative = false;
+                                                    if ($item < 0) { $isNegative=true; } @endphp
                                                     @if ($item == 'TOTAL STOCK WH SO KEDIRI')
                                                     <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                         colspan="3">
@@ -763,14 +829,16 @@
                                                         $item
                                                         }}
                                                     </td>
-                                                    @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                    $key=='ONT1' || $key=='ONT4'))
+                                                    @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                    <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                        $item }}</td>
+                                                    @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                                     <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                         $item }}</td>
-                                                    @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                    @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                                         style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                         }}</td>
-                                                        @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                        @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                             style="vertical-align : middle;text-align:center; padding:0;">{{
                                                             $item }}</td>
                                                     @else
@@ -790,6 +858,9 @@
                                                     $decimalValue = true;
                                                     }
                                                     @endphp
+                                                    @php
+                                                    $isNegative = false;
+                                                    if ($item < 0) { $isNegative=true; } @endphp
                                                     @if ($item == 'STOCK AMAN')
                                                     <td class="bg-success"
                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
@@ -821,14 +892,16 @@
                                                             $item
                                                             }}
                                                         </td>
-                                                        @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                        $key=='ONT1' || $key=='ONT4'))
+                                                        @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                        <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                            $item }}</td>
+                                                        @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                                         <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                             $item }}</td>
-                                                        @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                        @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                                             style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                             }}</td>
-                                                            @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                            @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                                 style="vertical-align : middle;text-align:center; padding:0;">{{
                                                                 $item }}</td>
 
@@ -848,6 +921,9 @@
                                                         $decimalValue = true;
                                                         }
                                                         @endphp
+                                                        @php
+                                                        $isNegative = false;
+                                                        if ($item < 0) { $isNegative=true; } @endphp
                                                         @if ($item == 'TOTAL STOCK WH SO SIDOARJO')
                                                         <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                             colspan="3">
@@ -874,14 +950,16 @@
                                                             $item
                                                             }}
                                                         </td>
-                                                        @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                        $key=='ONT1' || $key=='ONT4'))
+                                                        @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                        <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                            $item }}</td>
+                                                        @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                                         <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                             $item }}</td>
-                                                        @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                        @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                                             style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                             }}</td>
-                                                            @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                            @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                                 style="vertical-align : middle;text-align:center; padding:0;">{{
                                                                 $item }}</td>
                                                         @else
@@ -902,6 +980,9 @@
                                                         $decimalValue = true;
                                                         }
                                                         @endphp
+                                                        @php
+                                                        $isNegative = false;
+                                                        if ($item < 0) { $isNegative=true; } @endphp
                                                         @if ($item == 'STOCK AMAN')
                                                         <td class="bg-success"
                                                             style="vertical-align : middle;text-align:center; padding:0;">
@@ -932,14 +1013,16 @@
                                                                 {{
                                                                 $item }}
                                                             </td>
-                                                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                            $key=='ONT1' || $key=='ONT4'))
+                                                            @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                            <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                $item }}</td>
+                                                            @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                                             <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                                 $item }}</td>
-                                                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                            @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                                                 style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                                 }}</td>
-                                                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                                     style="vertical-align : middle;text-align:center; padding:0;">{{
                                                                     $item }}</td>
 
@@ -960,6 +1043,9 @@
                                                             $decimalValue = true;
                                                             }
                                                             @endphp
+                                                            @php
+                                                            $isNegative = false;
+                                                            if ($item < 0) { $isNegative=true; } @endphp
                                                             @if ($item == 'TOTAL STOCK WH SO JEMBER')
                                                             <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                                 colspan="3">
@@ -986,14 +1072,16 @@
                                                                 $item
                                                                 }}
                                                             </td>
-                                                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                            $key=='ONT1' || $key=='ONT4'))
+                                                            @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                            <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                $item }}</td>
+                                                            @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                                             <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                                 $item }}</td>
-                                                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                            @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                                                 style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                                 }}</td>
-                                                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                                     style="vertical-align : middle;text-align:center; padding:0;">{{
                                                                     $item }}</td>
                                                             @else
@@ -1014,6 +1102,9 @@
                                                             $decimalValue = true;
                                                             }
                                                             @endphp
+                                                            @php
+                                                            $isNegative = false;
+                                                            if ($item < 0) { $isNegative=true; } @endphp
                                                             @if ($item == 'STOCK AMAN')
                                                             <td class="bg-success"
                                                                 style="vertical-align : middle;text-align:center; padding:0;">
@@ -1043,14 +1134,16 @@
                                                                 <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
                                                                     {{ $item }}
                                                                 </td>
-                                                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                                $key=='ONT1' || $key=='ONT4'))
+                                                                @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                                <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                    $item }}</td>
+                                                                @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                                                 <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                                     $item }}</td>
-                                                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                                @elseif ($item < 20 && $key=='ONT1') <td class="bg-danger"
                                                                     style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                                     }}</td>
-                                                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                    @elseif ($item < 15 && $key=='STB1') <td class="bg-danger"
                                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
                                                                         $item }}</td>
 
@@ -1071,6 +1164,9 @@
                                                                 $decimalValue = true;
                                                                 }
                                                                 @endphp
+                                                                @php
+                                                                $isNegative = false;
+                                                                if ($item < 0) { $isNegative=true; } @endphp
                                                                 @if ($item == 'TOTAL STOCK WH SO MADURA')
                                                                 <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                                     colspan="3">
@@ -1097,14 +1193,16 @@
                                                                     $item
                                                                     }}
                                                                 </td>
-                                                                @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                                $key=='ONT1' || $key=='ONT4'))
+                                                               @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                                <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                    $item }}</td>
+                                                                @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
                                                                 <td style="vertical-align: middle; text-align: center; padding: 0;">{{
                                                                     $item }}</td>
-                                                                @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
+                                                                @elseif ($item < 20 && $key=='ONT1' ) <td class="bg-danger"
                                                                     style="vertical-align : middle;text-align:center; padding:0;">{{ $item
                                                                     }}</td>
-                                                                    @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
+                                                                    @elseif ($item < 15 && $key=='STB1' ) <td class="bg-danger"
                                                                         style="vertical-align : middle;text-align:center; padding:0;">{{
                                                                         $item }}</td>
                                                                 @else
@@ -1125,6 +1223,9 @@
                                                                 $decimalValue = true;
                                                                 }
                                                                 @endphp
+                                                                @php
+                                                                $isNegative = false;
+                                                                if ($item < 0) { $isNegative=true; } @endphp
                                                                 @if ($item == 'STOCK AMAN')
                                                                 <td class="bg-success"
                                                                     style="vertical-align : middle;text-align:center; padding:0;">
@@ -1149,16 +1250,18 @@
                                                                     <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
                                                                         {{ $item }}
                                                                     </td>
-                                                                    @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                                    $key=='ONT1' || $key=='ONT4'))
-                                                                    <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                   @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                                <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                    $item }}</td>
+                                                                @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
+                                                                <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                    $item }}</td>
+                                                                @elseif ($item < 20 && $key=='ONT1' ) <td class="bg-danger"
+                                                                    style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                    }}</td>
+                                                                    @elseif ($item < 15 && $key=='STB1' ) <td class="bg-danger"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">{{
                                                                         $item }}</td>
-                                                                    @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
-                                                                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                                        }}</td>
-                                                                        @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
-                                                                            style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                                            $item }}</td>
 
                                                                 @else
                                                                 <td
@@ -1176,6 +1279,9 @@
                                                                     $decimalValue = true;
                                                                     }
                                                                     @endphp
+                                                                    @php
+                                                                    $isNegative = false;
+                                                                    if ($item < 0) { $isNegative=true; } @endphp
                                                                     @if ($item == 'TOTAL STOCK WH SO MATARAM')
                                                                     <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                                         colspan="3">
@@ -1202,16 +1308,18 @@
                                                                         $item
                                                                         }}
                                                                     </td>
-                                                                    @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                                    $key=='ONT1' || $key=='ONT4'))
-                                                                    <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                   @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                                <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                    $item }}</td>
+                                                                @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
+                                                                <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                    $item }}</td>
+                                                                @elseif ($item < 20 && $key=='ONT1' ) <td class="bg-danger"
+                                                                    style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                    }}</td>
+                                                                    @elseif ($item < 15 && $key=='STB1' ) <td class="bg-danger"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">{{
                                                                         $item }}</td>
-                                                                    @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
-                                                                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                                        }}</td>
-                                                                        @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
-                                                                            style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                                            $item }}</td>
                                                                     @else
                                                                     <td
                                                                         style="vertical-align: middle; text-align: center; padding: 0;">
@@ -1230,6 +1338,9 @@
                                                                     $decimalValue = true;
                                                                     }
                                                                     @endphp
+                                                                    @php
+                                                                    $isNegative = false;
+                                                                    if ($item < 0) { $isNegative=true; } @endphp
                                                                     @if ($item == 'STOCK AMAN')
                                                                     <td class="bg-success"
                                                                         style="vertical-align : middle;text-align:center; padding:0;">
@@ -1254,16 +1365,18 @@
                                                                         <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
                                                                             {{ $item }}
                                                                         </td>
-                                                                        @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                                        $key=='ONT1' || $key=='ONT4'))
-                                                                        <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                     @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                                    <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                        $item }}</td>
+                                                                    @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
+                                                                    <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                        $item }}</td>
+                                                                    @elseif ($item < 20 && $key=='ONT1' ) <td class="bg-danger"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                        }}</td>
+                                                                        @elseif ($item < 15 && $key=='STB1' ) <td class="bg-danger"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">{{
                                                                             $item }}</td>
-                                                                        @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
-                                                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                                            }}</td>
-                                                                            @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
-                                                                                style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                                                $item }}</td>
 
                                                                     @else
                                                                     <td
@@ -1282,6 +1395,9 @@
                                                                         $decimalValue = true;
                                                                         }
                                                                         @endphp
+                                                                        @php
+                                                                        $isNegative = false;
+                                                                        if ($item < 0) { $isNegative=true; } @endphp
                                                                         @if ($item == 'TOTAL STOCK WH SO KUPANG')
                                                                         <td style="vertical-align: middle; text-align: center; padding: 0;"
                                                                             colspan="3">
@@ -1308,16 +1424,18 @@
                                                                             $item
                                                                             }}
                                                                         </td>
-                                                                        @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                                        $key=='ONT1' || $key=='ONT4'))
-                                                                        <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                       @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                                    <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                        $item }}</td>
+                                                                    @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
+                                                                    <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                        $item }}</td>
+                                                                    @elseif ($item < 20 && $key=='ONT1' ) <td class="bg-danger"
+                                                                        style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                        }}</td>
+                                                                        @elseif ($item < 15 && $key=='STB1' ) <td class="bg-danger"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">{{
                                                                             $item }}</td>
-                                                                        @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
-                                                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                                            }}</td>
-                                                                            @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
-                                                                                style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                                                $item }}</td>
                                                                         @else
                                                                         <td
                                                                             style="vertical-align: middle; text-align: center; padding: 0;">
@@ -1338,6 +1456,9 @@
                                                                         $decimalValue = true;
                                                                         }
                                                                         @endphp
+                                                                        @php
+                                                                        $isNegative = false;
+                                                                        if ($item < 0) { $isNegative=true; } @endphp
                                                                         @if ($item == 'STOCK AMAN')
                                                                         <td class="bg-success"
                                                                             style="vertical-align : middle;text-align:center; padding:0;">
@@ -1362,16 +1483,18 @@
                                                                             <td class="cell-2" style="vertical-align: middle; text-align: center; padding: 0;">
                                                                                 {{ $item }}
                                                                             </td>
-                                                                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                                            $key=='ONT1' || $key=='ONT4'))
-                                                                            <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                           @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                                        <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                            $item }}</td>
+                                                                        @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
+                                                                        <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                            $item }}</td>
+                                                                        @elseif ($item < 20 && $key=='ONT1' ) <td class="bg-danger"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                            }}</td>
+                                                                            @elseif ($item < 15 && $key=='STB1' ) <td class="bg-danger"
+                                                                                style="vertical-align : middle;text-align:center; padding:0;">{{
                                                                                 $item }}</td>
-                                                                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
-                                                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                                                }}</td>
-                                                                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
-                                                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                                                    $item }}</td>
 
                                                                         @else
                                                                         <td
@@ -1420,20 +1543,18 @@
                                                                                 $item
                                                                                 }}
                                                                             </td>
-                                                                            @elseif ($isNegative && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                                            $key=='ONT1' || $key=='ONT4'))
-                                                                            <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                           @elseif ($isNegative && ($key=='STB1' || $key=='ONT1'))
+                                                                        <td class="bg-danger" style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                            $item }}</td>
+                                                                        @elseif ($decimalValue && ($key=='STB1' || $key=='ONT1'))
+                                                                        <td style="vertical-align: middle; text-align: center; padding: 0;">{{
+                                                                            $item }}</td>
+                                                                        @elseif ($item < 20 && $key=='ONT1' ) <td class="bg-danger"
+                                                                            style="vertical-align : middle;text-align:center; padding:0;">{{ $item
+                                                                            }}</td>
+                                                                            @elseif ($item < 15 && $key=='STB1' ) <td class="bg-danger"
+                                                                                style="vertical-align : middle;text-align:center; padding:0;">{{
                                                                                 $item }}</td>
-                                                                            @elseif ($decimalValue && ($key=='STB1' || $key=='STB' || $key=='STB4' || $key=='ONT' ||
-                                                                            $key=='ONT1' || $key=='ONT4'))
-                                                                            <td style="vertical-align: middle; text-align: center; padding: 0;">{{
-                                                                                $item }}</td>
-                                                                            @elseif ($item < 20 && ($key=='ONT' || $key=='ONT1' || $key=='ONT4' ) ) <td class="bg-danger"
-                                                                                style="vertical-align : middle;text-align:center; padding:0;">{{ $item
-                                                                                }}</td>
-                                                                                @elseif ($item < 15 && ($key=='STB1' || $key=='STB' || $key=='STB4' ) ) <td class="bg-danger"
-                                                                                    style="vertical-align : middle;text-align:center; padding:0;">{{
-                                                                                    $item }}</td>
                                                                             @else
                                                                             <td
                                                                                 style="vertical-align: middle; text-align: center; padding: 0;">

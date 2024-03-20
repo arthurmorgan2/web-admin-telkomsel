@@ -17,8 +17,8 @@
                     Witel</th>
                 <th class="text-center ont-main-text bg-info" style="vertical-align : middle;text-align:center;"
                     rowspan="2">WMSL</th>
-                <th class="text-center ont-main-text bg-success" colspan="6">ONT PREMIUM</th>
-                <th class="text-center ont-main-text bg-warning" colspan="6">ONT DB</th>
+                <th class="text-center ont-main-text bg-danger" colspan="6">ONT PREMIUM</th>
+                <th class="text-center ont-main-text bg-info" colspan="6">ONT DB</th>
                 <th class="text-center ont-main-text cell-2" colspan="3">ONT SB</th>
                 <th class="text-center ont-main-text bg-info"
                     style="vertical-align : middle;text-align:center; padding:0;" rowspan="3">TOTAL ONT</th>
@@ -28,16 +28,16 @@
             </tr>
 
             <tr>
-                <th class="text-center ont-main-text bg-success" colspan="2">ZTE</th>
-                <th class="text-center ont-main-text bg-success" colspan="2">HUAWEI</th>
-                <th class="text-center ont-main-text bg-success">FH</th>
-                <th class="text-center ont-main-text bg-success" style="padding: 0; vertical-align:middle;" rowspan="2">
+                <th class="text-center ont-main-text bg-danger" colspan="2">ZTE</th>
+                <th class="text-center ont-main-text bg-danger" colspan="2">HUAWEI</th>
+                <th class="text-center ont-main-text bg-danger">FH</th>
+                <th class="text-center ont-main-text bg-danger" style="padding: 0; vertical-align:middle;" rowspan="2">
                     TOTAL ONT PREMIUM</th>
-                <th class="text-center ont-main-text bg-warning">ZTE</th>
-                <th class="text-center ont-main-text bg-warning">HUAWEI</th>
-                <th class="text-center ont-main-text bg-warning" colspan="2">FH</th>
-                <th class="text-center ont-main-text bg-warning">NOKIA</th>
-                <th class="text-center ont-main-text bg-warning" style="padding: 0; vertical-align:middle;" rowspan="2">
+                <th class="text-center ont-main-text bg-info">ZTE</th>
+                <th class="text-center ont-main-text bg-info">HUAWEI</th>
+                <th class="text-center ont-main-text bg-info" colspan="2">FH</th>
+                <th class="text-center ont-main-text bg-info">NOKIA</th>
+                <th class="text-center ont-main-text bg-info" style="padding: 0; vertical-align:middle;" rowspan="2">
                     TOTAL ONT DB</th>
                 <th class="text-center ont-main-text cell-2">ZTE</th>
                 <th class="text-center ont-main-text cell-2">HUAWEI</th>
@@ -51,35 +51,35 @@
                     _ZTE_F670
                     _V2.0
                 </th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-success">ONT_ZTE_
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT_ZTE_
                     F670
                 </th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-success">ONT_ZTE_
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT_ZTE_
                     F670 V2.0
                 </th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-success">ONT_HUAWEI
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT_HUAWEI
                     _HG8245U
                 </th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-success">ONT_HUAWEI
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT_HUAWEI
                     HG8245W5
                     -6T
                 </th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-success">ONT_FH
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-danger">ONT_FH
                     _HG6245N
                 </th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">ONT_ZTE
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT_ZTE
                     _F670L
                 </th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">ONT_HUAWEI
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT_HUAWEI
                     _HG8145V5
                 </th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">ONT_FH
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT_FH
                     _HG6145F
                 </th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">ONT_FH
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT_FH
                     _HG6145D2
                 </th>
-                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-warning">ONT_NOKIA
+                <th style="vertical-align : middle;text-align:center; padding:0;" class="bg-info">ONT_NOKIA
                     _G-2425G-A
                 </th>
                 <th style="vertical-align : middle;text-align:center; padding:0;" class="cell-2">ONT_ZTE_

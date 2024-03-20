@@ -20,7 +20,7 @@ class DataController extends Controller
         // $dismantling = Dismantling::all();
         // $refurbished = Refurbished::all();
         //Google Sheet API NTE BARU
-        $ntebaru = Sheets::spreadsheet('1UC7ghJHsFIQOms8htwVO37NBD5AO6Uo19xZwV00Sr8A')->sheet('Copy of Report Laporan TSEL R5')->range("A5:AB20")->get();
+        $ntebaru = Sheets::spreadsheet('1UC7ghJHsFIQOms8htwVO37NBD5AO6Uo19xZwV00Sr8A')->sheet('Copy of Report Laporan TSEL R5 TERBARU WEB')->range("A6:AE21")->get();
         $headerBaru = $ntebaru->pull(0);
         $valuesBaru = Sheets::collection($headerBaru, $ntebaru);
         $dataBaru = array_values($valuesBaru->toArray());
@@ -28,7 +28,7 @@ class DataController extends Controller
         $slicedDataBaruTotal = array_slice($dataBaru, 14, 1);
         // dd($slicedDataBaru);
         //Google Sheet API DISMANTLING
-        $dismantling = Sheets::spreadsheet('1UC7ghJHsFIQOms8htwVO37NBD5AO6Uo19xZwV00Sr8A')->sheet('Copy of Report Laporan TSEL R5')->range("A26:AB41")->get();
+        $dismantling = Sheets::spreadsheet('1UC7ghJHsFIQOms8htwVO37NBD5AO6Uo19xZwV00Sr8A')->sheet('Copy of Report Laporan TSEL R5 TERBARU WEB')->range("A28:AE43")->get();
         $headerDismantling = $dismantling->pull(0);
         $valuesDismantling = Sheets::collection($headerDismantling, $dismantling);
         $dataDismantling = array_values($valuesDismantling->toArray());
@@ -36,7 +36,7 @@ class DataController extends Controller
         $slicedDataDismantlingTotal = array_slice($dataBaru, 14, 1);
         // dd($dataDismantling);
         //Google Sheet API REFURBISHED
-        $refurbished = Sheets::spreadsheet('1UC7ghJHsFIQOms8htwVO37NBD5AO6Uo19xZwV00Sr8A')->sheet('Copy of Report Laporan TSEL R5')->range("A47:AB62")->get();
+        $refurbished = Sheets::spreadsheet('1UC7ghJHsFIQOms8htwVO37NBD5AO6Uo19xZwV00Sr8A')->sheet('Copy of Report Laporan TSEL R5 TERBARU WEB')->range("A50:AE65")->get();
         $headerRefurbished = $refurbished->pull(0);
         $valuesRefurbished = Sheets::collection($headerRefurbished, $refurbished);
         $dataRefurbished = array_values($valuesRefurbished->toArray());
